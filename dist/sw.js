@@ -1,4 +1,4 @@
-const CACHE = 'china-2028-v7';
+const CACHE = 'china-2028-v8';
 const ASSETS = [
   './',
   './index.html',

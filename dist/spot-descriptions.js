@@ -9,7 +9,7 @@ window.spotDescriptions = Object.freeze({
   "Határátlépés Makaóból Zhuhaiba": "Itt hagyjuk el Makaót és lépünk be a szárazföldi Kínába. A megfelelő határpontot, az útlevélfeltételeket és a vasútállomásig tartó transzfert indulás előtt külön ellenőrizzük.",
   "Gyorsvasút Zhuhai felől Guangzhouba": "A Makaó melletti Zhuhaiból vonattal folytatjuk az utat Guangzhou felé. A kiválasztott határátkelőhöz illeszkedő állomást és a tényleges vonatot a foglaláskor pontosítjuk.",
   "Huacheng tér": "Guangzhou modern városközpontjának tágas tere felhőkarcolók és kulturális épületek között. A folyó felé haladva a Canton Tower is a városi panoráma része lesz.",
-  "Repülés Shenzhenből Sanghajba": "A dél-kínai nagyvárosi szakasz után repülővel jutunk Sanghajba. A város két repülőtere miatt a járat kiválasztásával együtt a szállásig tartó transzfert is megtervezzük.",
+  "Gyorsvasút Shenzhenből Sanghajba": "A dél-kínai nagyvárosi szakasz után nagysebességű vonattal utazunk Sanghajba. A pályaudvar és a szállás távolsága határozza meg a helyi transzfert; a menetidő hosszú, ezért a nap nagy része az úton telik.",
   "Gyorsvasút Sanghajból Nanjingba": "Vasúton utazunk tovább a Jangce menti Nanjingba. A pályaudvar és a szállás helye együtt határozza meg, mennyi idő marad az érkezési nap történelmi negyedeire.",
   "Laomendong történelmi negyed": "Nanjing felújított történelmi negyede alacsony házakkal, sikátorokkal és helyi üzletekkel. Kényelmes sétára és falatozásra ad lehetőséget a régi déli városrészben.",
   "Fuzimiao Konfuciusz-templom": "A Konfuciusz tiszteletéhez kapcsolódó helyszín Nanjing egyik legismertebb kulturális negyedének központja. Körülötte hagyományos stílusú utcák, üzletek és a Qinhuai folyópart látnivalói sorakoznak.",

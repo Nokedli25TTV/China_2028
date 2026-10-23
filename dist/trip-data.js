@@ -26,7 +26,7 @@ window.chinaTrip = {
       {n:9,title:'Régi település és kortárs Shenzhen',route:['Nantou ősi város','OCT Loft művésznegyed','Shenzhen Bay Park','Talent Park esti fényjátéka'],note:'Régi utcák, művésznegyed és vízpart. A fényprogram aktuális napjait később ellenőrizzük.',load:'közepes'}
     ]},
     {id:'sanghaj',name:'Shanghai · Sanghaj',nights:4,period:'június 23–27.',blurb:'Art deco, vízi városok és Pudong felhőkarcolói.',days:[
-      {n:10,title:'Repülés Sanghajba',route:['Repülés Shenzhenből Sanghajba','Nanjing Road','Bund rakpart'],note:'Utazási nap, egyetlen összefüggő esti sétával. Kései érkezéskor a Bund másik estére tehető.',load:'könnyű',travel:true},
+      {n:10,title:'Vonattal Sanghajba',route:['Gyorsvasút Shenzhenből Sanghajba','Nanjing Road','Bund rakpart'],note:'Hosszú vonatutazás napja: a menetidő forrásonként 7–10 óra, ezért a program egy esti sétára szorítkozik. A Bund másik estére is tehető.',load:'könnyű',travel:true},
       {n:11,title:'Kertek és a régi Sanghaj',route:['Yu-kert','Városisten temploma','Óvárosi utcák','Xintiandi','Egykori francia negyed'],note:'Hagyományos kert, shikumen épületek és fákkal szegélyezett utcák. A két városrész között közlekedéssel számolunk.',load:'közepes'},
       {n:12,title:'Pudong és a modern horizont',route:['Lujiazui sétány','Shanghai Tower','Pudong Art Museum','Huangpu-part esti fényei'],note:'A torony és a múzeum belső programja érdeklődés és jegyfoglalás szerint választható.',load:'közepes'},
       {n:13,title:'Zhujiajiao vízi városa',route:['Zhujiajiao csatornái','Kezhi-kert','Fangsheng híd','Régi teaházak és sikátorok'],note:'Lassabb kirándulónap. A ki- és visszautazás miatt másik nagy programot már nem teszünk mellé.',load:'közepes'}
