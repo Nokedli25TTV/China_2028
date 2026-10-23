@@ -1,4 +1,4 @@
-const CACHE = 'china-2028-v9';
+const CACHE = 'china-2028-v10';
 const ASSETS = [
   './',
   './index.html',
@@ -10,18 +10,30 @@ const ASSETS = [
   './assets/app-icon.svg',
   './assets/china-journey-hero.webp',
   './city-photos.js',
-  './assets/cities/hongkong.jpg',
-  './assets/cities/macao.jpg',
-  './assets/cities/guangzhou.jpg',
-  './assets/cities/shenzhen.jpg',
-  './assets/cities/sanghaj.jpg',
-  './assets/cities/nanjing.jpg',
-  './assets/cities/xian.jpg',
-  './assets/cities/peking.jpg',
-  './assets/cities/chengdu.jpg',
-  './assets/cities/furong.jpg',
-  './assets/cities/chongqing.jpg',
-  './assets/cities/szingapur.jpg'
+  './assets/cities/hongkong-1.jpg',
+  './assets/cities/hongkong-2.jpg',
+  './assets/cities/macao-1.jpg',
+  './assets/cities/macao-2.jpg',
+  './assets/cities/guangzhou-1.jpg',
+  './assets/cities/guangzhou-2.jpg',
+  './assets/cities/shenzhen-1.jpg',
+  './assets/cities/shenzhen-2.jpg',
+  './assets/cities/sanghaj-1.jpg',
+  './assets/cities/sanghaj-2.jpg',
+  './assets/cities/nanjing-1.jpg',
+  './assets/cities/nanjing-2.jpg',
+  './assets/cities/xian-1.jpg',
+  './assets/cities/xian-2.jpg',
+  './assets/cities/peking-1.jpg',
+  './assets/cities/peking-2.jpg',
+  './assets/cities/chengdu-1.jpg',
+  './assets/cities/chengdu-2.jpg',
+  './assets/cities/furong-1.jpg',
+  './assets/cities/furong-2.jpg',
+  './assets/cities/chongqing-1.jpg',
+  './assets/cities/chongqing-2.jpg',
+  './assets/cities/szingapur-1.jpg',
+  './assets/cities/szingapur-2.jpg'
 ];
 
 self.addEventListener('install', event => {

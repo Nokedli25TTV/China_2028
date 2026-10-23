@@ -436,8 +436,11 @@
     }
     .city-preview-photo { position: relative; margin: 0; min-height: 300px; overflow: hidden; border-radius: var(--radius-md); background: rgba(255,255,255,.05); }
     .city-preview-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .city-preview-photo figcaption { position: absolute; left: 12px; bottom: 12px; max-width: calc(100% - 24px); padding: 5px 10px; border-radius: 999px; background: rgba(0,0,0,.6); color: #fff; font-size: .7rem; line-height: 1.35; }
-    .city-preview-photo figcaption a { color: #f3ca6b; }
+    .city-preview-photo img { transition: opacity .3s ease; }
+    .city-preview-photo img.is-fading { opacity: 0; }
+    .city-preview-dots { position: absolute; left: 0; right: 0; bottom: 12px; display: flex; justify-content: center; gap: 8px; }
+    .city-preview-dot { width: 11px; height: 11px; padding: 0; border: 2px solid #fff; border-radius: 50%; background: rgba(0,0,0,.25); cursor: pointer; }
+    .city-preview-dot[aria-current="true"] { background: #f3ca6b; border-color: #f3ca6b; }
     .city-preview-text { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 8px 6px; }
     .city-preview-text h4 { margin: 0; font: 700 clamp(1.7rem, 3vw, 2.4rem)/1.05 Georgia, serif; color: var(--white); }
     .route-shell .city-preview-kicker { margin: 0; color: #f3ca6b; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -1110,9 +1113,9 @@
         </div>
         <div class="route-scroll"><div class="route-line" id="route-line"></div></div>
         <div class="city-preview">
-          <figure class="city-preview-photo">
+          <figure class="city-preview-photo" id="city-preview-photo">
             <img id="city-preview-img" alt="" width="960" height="640">
-            <figcaption id="city-preview-credit"></figcaption>
+            <div class="city-preview-dots" id="city-preview-dots"></div>
           </figure>
           <div class="city-preview-text" aria-live="polite">
             <p class="city-preview-kicker" id="city-preview-kicker"></p>
@@ -1564,12 +1567,11 @@
     function showCityPreview(cityId) {
       const city = routeCities.find(item => item.id === cityId);
       if (!city) return;
-      const photo = (window.cityPhotos || {})[city.id] || {};
       const position = routeCities.indexOf(city) + 1;
-      const image = document.getElementById('city-preview-img');
-      image.src = photo.src || '';
-      image.alt = photo.alt || '';
-      document.getElementById('city-preview-credit').innerHTML = photo.credit ? `Fotó: ${safe(photo.credit)} · <a href="${safe(photo.source)}" target="_blank" rel="noreferrer">Wikimedia Commons</a>` : '';
+      cityPhotoList = (window.cityPhotos || {})[city.id] || [];
+      document.getElementById('city-preview-dots').innerHTML = cityPhotoList.map((photo, photoIndex) => `<button class="city-preview-dot" type="button" data-photo="${photoIndex}" aria-label="${photoIndex + 1}. kép"></button>`).join('');
+      setCityPhoto(0, false);
+      startCityPhotoRotation();
       document.getElementById('city-preview-kicker').textContent = `${String(position).padStart(2, '0')}. állomás · ${city.nights} éj`;
       document.getElementById('city-preview-name').textContent = city.name;
       document.getElementById('city-preview-period').textContent = city.period;
@@ -1577,6 +1579,51 @@
       document.getElementById('city-preview-jump').dataset.city = city.id;
       document.querySelectorAll('.route-stop').forEach(stop => stop.setAttribute('aria-pressed', String(stop.dataset.jump === city.id)));
     }
+
+    let cityPhotoList = [];
+    let cityPhotoIndex = 0;
+    let cityPhotoTimer = null;
+    const cityPhotoImage = document.getElementById('city-preview-img');
+    const cityPhotoFrame = document.getElementById('city-preview-photo');
+
+    function setCityPhoto(index, animate) {
+      const photo = cityPhotoList[index];
+      if (!photo) return;
+      cityPhotoIndex = index;
+      const apply = () => {
+        if (cityPhotoList[index] !== photo) return;
+        cityPhotoImage.src = photo.src;
+        cityPhotoImage.alt = photo.alt;
+        cityPhotoImage.classList.remove('is-fading');
+      };
+      if (animate) {
+        cityPhotoImage.classList.add('is-fading');
+        setTimeout(apply, 300);
+      } else {
+        apply();
+      }
+      document.querySelectorAll('.city-preview-dot').forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === index)));
+    }
+
+    function stopCityPhotoRotation() {
+      clearInterval(cityPhotoTimer);
+      cityPhotoTimer = null;
+    }
+
+    function startCityPhotoRotation() {
+      stopCityPhotoRotation();
+      if (cityPhotoList.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      cityPhotoTimer = setInterval(() => setCityPhoto((cityPhotoIndex + 1) % cityPhotoList.length, true), 4500);
+    }
+
+    document.getElementById('city-preview-dots').addEventListener('click', event => {
+      const dot = event.target.closest('[data-photo]');
+      if (!dot) return;
+      setCityPhoto(Number(dot.dataset.photo), true);
+      startCityPhotoRotation();
+    });
+    cityPhotoFrame.addEventListener('mouseenter', stopCityPhotoRotation);
+    cityPhotoFrame.addEventListener('mouseleave', startCityPhotoRotation);
 
     document.getElementById('route-line').addEventListener('click', event => {
       const button = event.target.closest('[data-jump]');
