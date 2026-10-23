@@ -1,4 +1,4 @@
-const CACHE = 'china-2028-v8';
+const CACHE = 'china-2028-v9';
 const ASSETS = [
   './',
   './index.html',
@@ -8,7 +8,20 @@ const ASSETS = [
   './budget.js',
   './manifest.webmanifest',
   './assets/app-icon.svg',
-  './assets/china-journey-hero.webp'
+  './assets/china-journey-hero.webp',
+  './city-photos.js',
+  './assets/cities/hongkong.jpg',
+  './assets/cities/macao.jpg',
+  './assets/cities/guangzhou.jpg',
+  './assets/cities/shenzhen.jpg',
+  './assets/cities/sanghaj.jpg',
+  './assets/cities/nanjing.jpg',
+  './assets/cities/xian.jpg',
+  './assets/cities/peking.jpg',
+  './assets/cities/chengdu.jpg',
+  './assets/cities/furong.jpg',
+  './assets/cities/chongqing.jpg',
+  './assets/cities/szingapur.jpg'
 ];
 
 self.addEventListener('install', event => {

@@ -422,6 +422,33 @@
     .route-stop strong { display:block; font-size:.85rem; }
     .route-stop small { color:rgba(255,255,255,.54); font-size:.72rem; }
     .route-stop:hover i, .route-stop:focus-visible i { transform: scale(1.08); background: var(--gold); }
+    .route-stop[aria-pressed="true"] i { transform: scale(1.08); background: var(--gold); }
+    .city-preview {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 22px;
+      align-items: stretch;
+      padding: 16px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .city-preview-photo { position: relative; margin: 0; min-height: 300px; overflow: hidden; border-radius: var(--radius-md); background: rgba(255,255,255,.05); }
+    .city-preview-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .city-preview-photo figcaption { position: absolute; left: 12px; bottom: 12px; max-width: calc(100% - 24px); padding: 5px 10px; border-radius: 999px; background: rgba(0,0,0,.6); color: #fff; font-size: .7rem; line-height: 1.35; }
+    .city-preview-photo figcaption a { color: #f3ca6b; }
+    .city-preview-text { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 8px 6px; }
+    .city-preview-text h4 { margin: 0; font: 700 clamp(1.7rem, 3vw, 2.4rem)/1.05 Georgia, serif; color: var(--white); }
+    .route-shell .city-preview-kicker { margin: 0; color: #f3ca6b; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .route-shell .city-preview-period { margin: 0; color: rgba(255,255,255,.6); font-size: .9rem; }
+    .route-shell .city-preview-blurb { margin: 0; color: rgba(255,255,255,.86); font-size: 1rem; line-height: 1.5; }
+    .city-preview-jump { align-self: flex-start; margin-top: 8px; border: 0; border-radius: 999px; padding: 12px 18px; font-family: inherit; font-size: .9rem; font-weight: 800; color: var(--ink); background: var(--gold); cursor: pointer; }
+    .city-preview-jump:hover, .city-preview-jump:focus-visible { background: #e2b35f; }
+    @media (max-width: 760px) {
+      .city-preview { grid-template-columns: 1fr; }
+      .city-preview-photo { min-height: 220px; }
+    }
 
     .itinerary-bg { background: rgba(255,253,248,.53); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .itinerary-bg .section { width: min(calc(100% - 40px), 1240px); }
@@ -1079,9 +1106,22 @@
       <div class="route-shell" id="utvonal">
         <div class="route-shell-top">
           <div><p class="eyebrow">Az út íve</p><h3>Hongkongból Szingapúrba</h3></div>
-          <p>Húzd oldalra mobilon · koppints egy városra a napi tervhez</p>
+          <p>Húzd oldalra mobilon · koppints egy városra: kép és rövid leírás</p>
         </div>
         <div class="route-scroll"><div class="route-line" id="route-line"></div></div>
+        <div class="city-preview">
+          <figure class="city-preview-photo">
+            <img id="city-preview-img" alt="" width="960" height="640">
+            <figcaption id="city-preview-credit"></figcaption>
+          </figure>
+          <div class="city-preview-text" aria-live="polite">
+            <p class="city-preview-kicker" id="city-preview-kicker"></p>
+            <h4 id="city-preview-name"></h4>
+            <p class="city-preview-period" id="city-preview-period"></p>
+            <p class="city-preview-blurb" id="city-preview-blurb"></p>
+            <button class="city-preview-jump" id="city-preview-jump" type="button">Napi terv megnyitása →</button>
+          </div>
+        </div>
         <p class="route-plan-note">Budapest: indulás június 14., hazaérkezés július 17. · A városi időszakok összesen 31 szálláséjszakát jelentenek; június 14. és július 16. éjszakáját egyelőre utazásra tartjuk fenn. Ez a repülőjegyekkel pontosítandó.</p>
       </div>
     </section>
@@ -1245,6 +1285,7 @@
   <script src="./spot-descriptions.js"></script>
   <script src="./budget-data.js"></script>
   <script src="./budget.js"></script>
+  <script src="./city-photos.js"></script>
   <script>
     const cities = window.chinaTrip.cities;
     const routeCities = cities.filter(city => !city.transit);
@@ -1352,7 +1393,7 @@
         `<div class="mini-stop"><span class="mini-dot"></span><strong>${safe(city.name)}</strong><small>${safe(city.period)} · ${city.nights} éj</small></div>`
       ).join('');
       document.getElementById('route-line').innerHTML = routeCities.map((city, index) =>
-        `<button class="route-stop" type="button" data-jump="${city.id}" aria-label="Ugrás ide: ${safe(city.name)}, ${safe(city.period)}"><i>${index + 1}</i><strong>${safe(city.name)}</strong><small>${safe(city.period)}<br>${city.nights} éj</small></button>`
+        `<button class="route-stop" type="button" data-jump="${city.id}" aria-pressed="false" aria-label="Kép és leírás: ${safe(city.name)}, ${safe(city.period)}"><i>${index + 1}</i><strong>${safe(city.name)}</strong><small>${safe(city.period)}<br>${city.nights} éj</small></button>`
       ).join('');
       cityFilter.insertAdjacentHTML('beforeend', cities.map(city => `<option value="${city.id}">${safe(city.name)}</option>`).join(''));
     }
@@ -1500,11 +1541,9 @@
       travelFilter.textContent = travelOnly ? '✓ Utazási napok' : '⇄ Utazási napok';
       renderItinerary();
     });
-    document.getElementById('route-line').addEventListener('click', event => {
-      const button = event.target.closest('[data-jump]');
-      if (!button) return;
+    function jumpToCity(cityId) {
       if (mobileDayMedia.matches) {
-        const entry = dayEntries.find(item => item.city.id === button.dataset.jump);
+        const entry = dayEntries.find(item => item.city.id === cityId);
         if (entry) {
           mobileViewMode = 'single';
           writeStored(VIEW_KEY, 'single');
@@ -1513,14 +1552,40 @@
         document.getElementById('napok').scrollIntoView({behavior:'smooth'});
         return;
       }
-      cityFilter.value = button.dataset.jump;
+      cityFilter.value = cityId;
       searchInput.value = '';
       travelOnly = false;
       travelFilter.setAttribute('aria-pressed','false');
       travelFilter.textContent = '⇄ Utazási napok';
       renderItinerary();
       document.getElementById('napok').scrollIntoView({behavior:'smooth'});
+    }
+
+    function showCityPreview(cityId) {
+      const city = routeCities.find(item => item.id === cityId);
+      if (!city) return;
+      const photo = (window.cityPhotos || {})[city.id] || {};
+      const position = routeCities.indexOf(city) + 1;
+      const image = document.getElementById('city-preview-img');
+      image.src = photo.src || '';
+      image.alt = photo.alt || '';
+      document.getElementById('city-preview-credit').innerHTML = photo.credit ? `Fotó: ${safe(photo.credit)} · <a href="${safe(photo.source)}" target="_blank" rel="noreferrer">Wikimedia Commons</a>` : '';
+      document.getElementById('city-preview-kicker').textContent = `${String(position).padStart(2, '0')}. állomás · ${city.nights} éj`;
+      document.getElementById('city-preview-name').textContent = city.name;
+      document.getElementById('city-preview-period').textContent = city.period;
+      document.getElementById('city-preview-blurb').textContent = city.blurb;
+      document.getElementById('city-preview-jump').dataset.city = city.id;
+      document.querySelectorAll('.route-stop').forEach(stop => stop.setAttribute('aria-pressed', String(stop.dataset.jump === city.id)));
+    }
+
+    document.getElementById('route-line').addEventListener('click', event => {
+      const button = event.target.closest('[data-jump]');
+      if (button) showCityPreview(button.dataset.jump);
     });
+    document.getElementById('city-preview-jump').addEventListener('click', event => {
+      jumpToCity(event.currentTarget.dataset.city);
+    });
+    showCityPreview(routeCities[0].id);
 
     const CHECK_STORAGE_KEY = 'china-2028-check-center:2028-06-14:v2';
     const CHECK_STATUSES = Object.freeze({
