@@ -1,0 +1,1669 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b4a42">
+  <meta name="description" content="34 napos útiterv 2028. június 14. és július 17. között, Hongkongtól Kína történelmi és modern városain át Szingapúrig, három utazóra.">
+  <meta name="color-scheme" content="light">
+  <title>Kína és Szingapúr 2028 – június 14. – július 17.</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/app-icon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --paper: #f3eee3;
+      --paper-soft: #fbf8f1;
+      --paper-deep: #e8dfcf;
+      --ink: #19231f;
+      --muted: #61706a;
+      --jade: #0f5b50;
+      --jade-deep: #073e38;
+      --jade-soft: #dce9e4;
+      --red: #c43f31;
+      --red-deep: #8f2b24;
+      --gold: #d3a24b;
+      --sand: #d7b17a;
+      --white: #fffdf8;
+      --line: rgba(25, 35, 31, .13);
+      --shadow: 0 18px 50px rgba(28, 42, 37, .10);
+      --shadow-soft: 0 8px 24px rgba(28, 42, 37, .08);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 15px;
+      --content: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(211, 162, 75, .10), transparent 24rem),
+        linear-gradient(rgba(255,255,255,.38) 1px, transparent 1px),
+        var(--paper);
+      background-size: auto, 100% 32px, auto;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      z-index: 100;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.10'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; }
+    ::selection { background: rgba(196,63,49,.22); }
+
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+      transform: translateY(-150%);
+      padding: 12px 16px;
+      background: var(--white);
+      color: var(--ink);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    .skip-link:focus { transform: none; }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      z-index: 200;
+      background: linear-gradient(90deg, var(--gold), var(--red));
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(900px, 96svh);
+      display: flex;
+      flex-direction: column;
+      isolation: isolate;
+      color: var(--white);
+      overflow: hidden;
+      background-color: var(--jade-deep);
+      background-image:
+        linear-gradient(90deg, rgba(6, 27, 25, .88) 0%, rgba(6, 31, 28, .70) 36%, rgba(7, 38, 34, .22) 70%, rgba(7, 38, 34, .05) 100%),
+        linear-gradient(0deg, rgba(6, 28, 25, .80), transparent 48%),
+        url("./assets/china-journey-hero.webp");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 130px;
+      z-index: -1;
+      background: linear-gradient(transparent, rgba(7,35,31,.85));
+    }
+    .hero-nav {
+      width: min(calc(100% - 40px), var(--content));
+      margin: 0 auto;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .brand-seal {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--red);
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,.08);
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 10px; }
+    .ghost-btn, .solid-btn, .tool-btn {
+      min-height: 44px;
+      border-radius: 999px;
+      padding: 10px 17px;
+      border: 1px solid rgba(255,255,255,.32);
+      color: inherit;
+      background: rgba(8,32,29,.35);
+      backdrop-filter: blur(14px);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+    .ghost-btn:hover, .ghost-btn:focus-visible { background: rgba(255,255,255,.17); transform: translateY(-1px); }
+    .install-btn[hidden] { display: none; }
+
+    .hero-inner {
+      width: min(calc(100% - 40px), var(--content));
+      margin: auto;
+      padding: 58px 0 70px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      align-items: end;
+      gap: 60px;
+    }
+    .eyebrow {
+      margin: 0 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .hero .eyebrow { color: #ffe0a2; }
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: currentColor;
+    }
+    .hero h1 {
+      margin: 0;
+      max-width: 760px;
+      font: 700 clamp(4rem, 10vw, 8.5rem)/.82 Georgia, "Times New Roman", serif;
+      letter-spacing: -.065em;
+      text-wrap: balance;
+      text-shadow: 0 6px 30px rgba(0,0,0,.25);
+    }
+    .hero h1 span { color: #f2c968; font-size:.74em; }
+    .hero-lead {
+      max-width: 670px;
+      margin: 28px 0 0;
+      font-size: clamp(1.05rem, 2vw, 1.32rem);
+      color: rgba(255,255,255,.86);
+      text-wrap: balance;
+    }
+    .hero-meta {
+      margin: 34px 0 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      list-style: none;
+    }
+    .hero-meta li {
+      padding: 10px 14px;
+      border-radius: 13px;
+      background: rgba(8,30,27,.46);
+      border: 1px solid rgba(255,255,255,.20);
+      backdrop-filter: blur(12px);
+      font-weight: 720;
+    }
+    .hero-card {
+      align-self: end;
+      padding: 26px;
+      border-radius: 25px;
+      background: rgba(8,31,28,.58);
+      border: 1px solid rgba(255,255,255,.24);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 70px rgba(0,0,0,.20);
+    }
+    .hero-card-label {
+      margin: 0 0 14px;
+      color: #f2c968;
+      text-transform: uppercase;
+      font-size: .72rem;
+      letter-spacing: .14em;
+      font-weight: 850;
+    }
+    .mini-route { display: grid; gap: 0; }
+    .mini-stop {
+      position: relative;
+      display: grid;
+      grid-template-columns: 22px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 7px 0;
+      font-size: .88rem;
+    }
+    .mini-stop:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 25px;
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,.25);
+    }
+    .mini-dot { width: 15px; height: 15px; border-radius: 50%; background: var(--gold); border: 4px solid rgba(255,255,255,.20); }
+    .mini-stop small { color: rgba(255,255,255,.73); font-size:.7rem; text-align:right; }
+    .route-plan-note { margin:20px 0 0; max-width:900px; color:rgba(255,255,255,.78); font-size:.85rem; }
+    .city-head .city-period { margin:0 0 8px; color:var(--jade); font-size:.8rem; font-weight:750; letter-spacing:.035em; }
+    .day-date { margin:8px 0 12px; color:var(--jade); font-size:.83rem; font-weight:700; }
+
+    .main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      border-bottom: 1px solid rgba(25,35,31,.10);
+      background: rgba(251,248,241,.90);
+      backdrop-filter: blur(18px);
+    }
+    .main-nav-inner {
+      width: min(calc(100% - 40px), var(--content));
+      min-height: 70px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-title { display: flex; align-items: center; gap: 10px; font-weight: 850; }
+    .nav-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 5px rgba(196,63,49,.10); }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--jade); background: var(--jade-soft); }
+
+    main { overflow: hidden; }
+    .section {
+      width: min(calc(100% - 40px), var(--content));
+      margin: 0 auto;
+      padding: 108px 0;
+    }
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, .6fr);
+      align-items: end;
+      gap: 50px;
+      margin-bottom: 42px;
+    }
+    .section-header h2 {
+      margin: 0;
+      font: 700 clamp(2.5rem, 6vw, 5rem)/.95 Georgia, "Times New Roman", serif;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .section-header p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 22px;
+    }
+    .principle-card, .stat-panel, .budget-card, .prep-card, .source-card {
+      border: 1px solid var(--line);
+      background: rgba(255,253,248,.82);
+      box-shadow: var(--shadow-soft);
+    }
+    .principle-card {
+      min-height: 370px;
+      padding: 38px;
+      border-radius: var(--radius-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        radial-gradient(circle at 90% 15%, rgba(211,162,75,.22), transparent 16rem),
+        rgba(255,253,248,.88);
+    }
+    .principle-card h3 { margin: 0; max-width: 660px; font: 700 clamp(1.7rem,3vw,2.8rem)/1.08 Georgia, serif; }
+    .principle-card > p { color: var(--muted); max-width: 650px; }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .principle {
+      padding: 17px;
+      border-radius: 16px;
+      background: rgba(15,91,80,.07);
+      border: 1px solid rgba(15,91,80,.10);
+    }
+    .principle strong { display: block; margin-bottom: 5px; color: var(--jade); }
+    .principle span { color: var(--muted); font-size: .88rem; }
+    .stat-panel { padding: 30px; border-radius: var(--radius-xl); display: grid; gap: 12px; }
+    .stat {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      color: var(--white);
+      background: var(--jade);
+    }
+    .stat:nth-child(2) { background: var(--red); }
+    .stat:nth-child(3) { color: var(--ink); background: var(--gold); }
+    .stat b { font: 700 2rem/1 Georgia, serif; }
+    .stat span { font-size: .82rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+
+    .route-shell {
+      margin-top: 24px;
+      padding: 32px 26px;
+      border-radius: var(--radius-xl);
+      color: var(--white);
+      background: var(--ink);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .route-shell-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 26px; }
+    .route-shell h3 { margin: 0; font: 700 1.55rem Georgia, serif; }
+    .route-shell p { margin: 0; color: rgba(255,255,255,.72); font-size: .86rem; }
+    .route-shell .route-plan-note { margin-top:20px; }
+    .route-scroll { overflow-x: auto; padding: 8px 2px 12px; scrollbar-width: thin; scrollbar-color: var(--gold) rgba(255,255,255,.08); }
+    .route-line {
+      min-width: 980px;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      position: relative;
+      gap: 8px;
+    }
+    .route-line::before { content:""; position:absolute; left:5%; right:5%; top:18px; height:2px; background: linear-gradient(90deg, var(--red), var(--gold), #74aaa0); }
+    .route-stop {
+      position: relative;
+      border: 0;
+      color: var(--white);
+      background: transparent;
+      cursor: pointer;
+      text-align: center;
+      padding: 0 4px;
+    }
+    .route-stop i {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 11px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--paper-soft);
+      color: var(--jade-deep);
+      border: 4px solid var(--gold);
+      font-style: normal;
+      font-weight: 900;
+      position: relative;
+    }
+    .route-stop strong { display:block; font-size:.85rem; }
+    .route-stop small { color:rgba(255,255,255,.54); font-size:.72rem; }
+    .route-stop:hover i, .route-stop:focus-visible i { transform: scale(1.08); background: var(--gold); }
+
+    .itinerary-bg { background: rgba(255,253,248,.53); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .itinerary-bg .section { width: min(calc(100% - 40px), 1240px); }
+    .planner-toolbar {
+      position: sticky;
+      top: 82px;
+      z-index: 60;
+      display: grid;
+      grid-template-columns: 1fr 220px auto;
+      gap: 12px;
+      margin: -10px 0 48px;
+      padding: 13px;
+      border-radius: 20px;
+      background: rgba(246,241,231,.92);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(18px);
+    }
+    .search-wrap { position: relative; }
+    .search-wrap::before { content: "⌕"; position: absolute; left: 16px; top: 50%; transform: translateY(-53%); font-size: 1.35rem; color: var(--muted); }
+    .search-wrap input, .planner-toolbar select {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--white);
+      color: var(--ink);
+      outline: none;
+    }
+    .search-wrap input { padding: 11px 15px 11px 45px; }
+    .planner-toolbar select { padding: 10px 38px 10px 13px; }
+    .search-wrap input:focus, .planner-toolbar select:focus { border-color: var(--jade); box-shadow: 0 0 0 4px rgba(15,91,80,.10); }
+    .tool-btn {
+      min-width: 150px;
+      border-color: var(--jade);
+      color: var(--white);
+      background: var(--jade);
+      backdrop-filter: none;
+    }
+    .tool-btn:hover { background: var(--jade-deep); transform: translateY(-1px); }
+
+    .day-view-switch, .day-view-help, .day-pager { display: none; }
+
+    .city-block { margin: 0 0 78px; scroll-margin-top: 165px; }
+    .city-head {
+      position: relative;
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      align-items: center;
+      gap: 26px;
+      margin-bottom: 22px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .city-number {
+      font: 700 clamp(3rem,6vw,5rem)/1 Georgia, serif;
+      color: var(--paper-deep);
+      -webkit-text-stroke: 1px rgba(25,35,31,.22);
+    }
+    .city-head h3 { margin: 0 0 5px; font: 700 clamp(2rem,4vw,3.4rem)/1 Georgia, serif; letter-spacing: -.035em; }
+    .city-head p { margin: 0; color: var(--muted); }
+    .nights-badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--jade);
+      background: var(--jade-soft);
+      font-size: .82rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .days-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .day-card {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .day-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: rgba(15,91,80,.24); }
+    .day-card.travel { background: linear-gradient(145deg, rgba(220,233,228,.82), var(--white) 48%); }
+    .day-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 17px; }
+    .day-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--red);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .day-number::before { content:""; width:8px; height:8px; border-radius:50%; background:currentColor; }
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+    .tag { padding: 5px 9px; border-radius: 999px; background: var(--paper); color: var(--muted); font-size: .69rem; font-weight: 850; text-transform: uppercase; letter-spacing: .05em; }
+    .tag.travel-tag { color: var(--jade); background: var(--jade-soft); }
+    .day-card h4 { margin: 0 0 16px; font: 700 1.42rem/1.14 Georgia, serif; }
+    .day-route { margin: 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: 0; }
+    .day-route li {
+      counter-increment: step;
+      position: relative;
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      align-items: start;
+      gap: 9px;
+      padding: 7px 0;
+      color: #33433d;
+    }
+    .day-route li::before {
+      content: counter(step);
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--jade);
+      font-size: .72rem;
+      font-weight: 900;
+      z-index: 1;
+    }
+    .day-route li:not(:last-child)::after { content:""; position:absolute; left:12px; top:32px; width:1px; height:14px; background: rgba(15,91,80,.23); }
+    .spot-trigger {
+      width: 100%;
+      min-height: 42px;
+      margin: -1px 0;
+      padding: 8px 10px;
+      border: 0;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: inherit;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      font-weight: 720;
+      line-height: 1.35;
+      transition: color .18s ease, background .18s ease, transform .18s ease;
+    }
+    .spot-trigger:hover { color: var(--jade); background: var(--jade-soft); transform: translateX(2px); }
+    .spot-trigger:focus-visible { color: var(--jade-deep); background: var(--jade-soft); outline: 3px solid rgba(211,162,75,.55); outline-offset: 2px; }
+    .spot-info {
+      width: 23px;
+      height: 23px;
+      flex: 0 0 23px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(15,91,80,.24);
+      border-radius: 50%;
+      color: var(--jade);
+      background: rgba(255,255,255,.62);
+      font: 800 .72rem/1 Georgia, serif;
+    }
+    .day-map-details {
+      margin: 15px 0 18px;
+      border: 1px solid rgba(15,91,80,.14);
+      border-radius: 18px;
+      background: var(--paper-soft);
+      overflow: hidden;
+    }
+    .day-map-details > summary {
+      min-height: 52px;
+      padding: 12px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--jade);
+      cursor: pointer;
+      font-size: .82rem;
+      font-weight: 900;
+      list-style: none;
+    }
+    .day-map-details > summary::-webkit-details-marker { display: none; }
+    .day-map-details > summary::after { content:"＋"; color:var(--red); font-size:1rem; }
+    .day-map-details[open] > summary::after { content:"−"; }
+    .day-map-details > summary small { margin-left:auto; color:var(--muted); font-size:.68rem; font-weight:750; }
+    .day-map {
+      position: relative;
+      padding: 0 15px 15px;
+      background:
+        linear-gradient(rgba(15,91,80,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,91,80,.035) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .day-map-alert {
+      display: flex;
+      gap: 9px;
+      margin: 0 0 15px;
+      padding: 11px 12px;
+      border-radius: 13px;
+      color: #75561c;
+      background: rgba(211,162,75,.17);
+      font-size: .76rem;
+      line-height: 1.45;
+    }
+    .day-map-alert > span { width:21px; height:21px; flex:0 0 21px; display:grid; place-items:center; border-radius:50%; color:white; background:var(--gold); font-weight:900; }
+    .day-map-list { margin:0; padding:0; list-style:none; }
+    .day-map-row { display:grid; grid-template-columns:34px minmax(0,1fr); align-items:center; gap:9px; }
+    .day-map-node { width:32px; height:32px; display:grid; place-items:center; border:3px solid var(--paper-soft); border-radius:50%; color:white; background:var(--jade); box-shadow:0 0 0 1px rgba(15,91,80,.2); font-size:.74rem; font-weight:900; z-index:1; }
+    .day-map .spot-trigger { min-height:48px; padding:9px 11px; background:rgba(255,255,255,.88); box-shadow:0 5px 14px rgba(18,50,42,.055); }
+    .day-map-place { min-width:0; display:grid; gap:3px; }
+    .day-map-place strong { font-size:.88rem; }
+    .day-map-place small { width:max-content; padding:3px 7px; border-radius:999px; color:var(--jade); background:var(--jade-soft); font-size:.62rem; font-weight:850; text-transform:uppercase; letter-spacing:.04em; }
+    .day-map-leg { position:relative; min-height:19px; margin-left:15px; border-left:2px solid rgba(15,91,80,.25); }
+    .day-map-leg.is-caution { min-height:48px; border-left:3px dashed var(--gold); }
+    .day-map-leg-label { position:absolute; top:50%; left:13px; max-width:calc(100% - 18px); padding:5px 8px; border-radius:9px; color:#75561c; background:#fff7e5; font-size:.66rem; font-weight:800; transform:translateY(-50%); }
+    .day-map-foot { margin:15px 0 0; padding-top:12px; border-top:1px dashed var(--line); color:var(--muted); font-size:.69rem; line-height:1.5; }
+    .day-note { margin: auto 0 0; padding-top: 17px; color: var(--muted); font-size: .88rem; border-top: 1px dashed var(--line); }
+    .empty-state { display:none; padding:60px 20px; text-align:center; border:1px dashed var(--line); border-radius:var(--radius-lg); color:var(--muted); }
+    .empty-state.show { display:block; }
+
+    body.modal-open { overflow: hidden; }
+    .spot-dialog {
+      width: min(calc(100% - 32px), 620px);
+      max-height: min(84svh, 720px);
+      margin: auto;
+      padding: 0;
+      border: 0;
+      border-radius: 30px;
+      color: var(--ink);
+      background: var(--white);
+      box-shadow: 0 34px 100px rgba(3,24,21,.30);
+      overflow: hidden;
+    }
+    .spot-dialog[open] { animation: spot-dialog-in .22s ease-out both; }
+    .spot-dialog::backdrop { background: rgba(4,24,21,.64); backdrop-filter: blur(8px); }
+    .spot-dialog-card { position: relative; max-height: min(84svh,720px); padding: 38px 40px 32px; overflow-y: auto; overscroll-behavior: contain; }
+    .spot-dialog-card::before { content:""; position:absolute; inset:0 0 auto; height:7px; background:linear-gradient(90deg,var(--red),var(--gold),var(--jade)); }
+    .spot-dialog-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      background: var(--paper-soft);
+      cursor: pointer;
+      font-size: 1.45rem;
+      line-height: 1;
+      transition: background .18s ease, transform .18s ease;
+    }
+    .spot-dialog-close:hover { background: var(--jade-soft); transform: rotate(5deg); }
+    .spot-dialog-close:focus-visible { outline:3px solid rgba(211,162,75,.55); outline-offset:2px; }
+    .spot-dialog-mark { display:flex; align-items:center; gap:10px; margin:0 58px 24px 0; color:var(--red); font-size:.72rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+    .spot-dialog-step { width:34px; height:34px; display:grid; place-items:center; border-radius:11px; color:var(--white); background:var(--red); font-size:.8rem; letter-spacing:0; }
+    .spot-dialog-kicker { margin:0 0 8px; color:var(--jade); font-size:.78rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+    .spot-dialog h3 { max-width: 500px; margin:0 0 18px; font:700 clamp(2rem,6vw,3rem)/1.04 Georgia,serif; letter-spacing:-.035em; }
+    .spot-dialog-copy { margin:0; color:#40514a; font-size:1.04rem; line-height:1.72; }
+    .spot-dialog-foot { margin:28px 0 0; padding:17px 18px; border-radius:15px; display:flex; align-items:flex-start; gap:11px; color:var(--muted); background:var(--paper-soft); font-size:.83rem; }
+    .spot-dialog-foot span { color:var(--gold); font-weight:900; }
+    @keyframes spot-dialog-in { from { opacity:0; transform:translateY(14px) scale(.98); } to { opacity:1; transform:none; } }
+
+    .budget-intro {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+    .budget-hero {
+      min-height: 330px;
+      padding: 38px;
+      border-radius: var(--radius-xl);
+      color: var(--white);
+      background: var(--jade-deep);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .budget-hero::after { content:"¥"; position:absolute; right:-10px; bottom:-85px; font:700 15rem/1 Georgia,serif; color:rgba(255,255,255,.05); }
+    .budget-hero h3 { margin:0; font:700 clamp(2rem,4vw,3.8rem)/1 Georgia,serif; }
+    .budget-big { position:relative; z-index:1; }
+    .budget-big b { display:block; color:#f3ca6b; font:700 clamp(1.9rem,4.4vw,3.6rem)/1.1 Georgia,serif; letter-spacing:-.04em; overflow-wrap:anywhere; margin:20px 0 10px; }
+    .budget-big span { color:rgba(255,255,255,.68); }
+    .budget-summary { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .budget-card { padding:24px; border-radius:var(--radius-lg); }
+    .budget-card small { color:var(--muted); text-transform:uppercase; letter-spacing:.09em; font-weight:850; }
+    .budget-card strong { display:block; margin-top:8px; font:700 2rem/1 Georgia,serif; color:var(--red); }
+    .budget-card p { margin:9px 0 0; color:var(--muted); font-size:.85rem; }
+    .cost-table-wrap { overflow:hidden; border-radius:var(--radius-xl); border:1px solid var(--line); background:rgba(255,253,248,.82); box-shadow:var(--shadow-soft); }
+    .cost-table { width:100%; border-collapse:collapse; }
+    .cost-table th, .cost-table td { padding:17px 22px; text-align:left; border-bottom:1px solid var(--line); }
+    .cost-table th { color:var(--muted); font-size:.75rem; text-transform:uppercase; letter-spacing:.09em; background:rgba(220,233,228,.45); }
+    .cost-table td:last-child, .cost-table th:last-child { text-align:left; font-weight:600; }
+    .cost-table tr:last-child td { border-bottom:0; }
+    .budget-note { margin:18px 2px 0; color:var(--muted); font-size:.9rem; }
+
+    .check-overview { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin-bottom:18px; }
+    .check-summary { min-height:116px; padding:20px; border:1px solid var(--line); border-radius:var(--radius-lg); display:grid; align-content:space-between; gap:12px; color:var(--ink); background:var(--white); box-shadow:var(--shadow-soft); cursor:pointer; text-align:left; }
+    .check-summary:hover, .check-summary:focus-visible, .check-summary.active { transform:translateY(-2px); border-color:currentColor; box-shadow:var(--shadow); }
+    .check-summary small { font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .check-summary strong { font:700 2.35rem/1 Georgia,serif; }
+    .check-summary[data-check-filter="estimate"] { color:#8b6422; }
+    .check-summary[data-check-filter="check"] { color:var(--red); }
+    .check-summary[data-check-filter="booked"] { color:var(--jade); }
+    .check-toolbar { display:flex; align-items:center; justify-content:space-between; gap:14px; margin:0 0 24px; padding:12px; border:1px solid var(--line); border-radius:18px; background:rgba(255,253,248,.78); }
+    .check-filters { display:flex; gap:7px; flex-wrap:wrap; }
+    .check-filter, .check-reset { min-height:42px; padding:8px 13px; border:1px solid var(--line); border-radius:999px; color:var(--muted); background:var(--white); cursor:pointer; font-size:.78rem; font-weight:850; }
+    .check-filter:hover, .check-filter:focus-visible, .check-filter.active { color:var(--white); border-color:var(--jade); background:var(--jade); }
+    .check-reset { color:var(--red-deep); }
+    .check-groups { display:grid; gap:18px; }
+    .check-category { padding:24px; border:1px solid var(--line); border-radius:var(--radius-xl); background:rgba(255,253,248,.82); box-shadow:var(--shadow-soft); }
+    .check-category-head { display:flex; align-items:center; gap:13px; margin-bottom:17px; }
+    .check-category-icon { width:44px; height:44px; flex:0 0 44px; display:grid; place-items:center; border-radius:14px; color:var(--white); background:var(--jade); font-size:1.2rem; }
+    .check-category-head h3 { margin:0; font:700 1.35rem Georgia,serif; }
+    .check-category-head span:last-child { margin-left:auto; padding:6px 9px; border-radius:999px; color:var(--red-deep); background:rgba(196,63,49,.09); font-size:.68rem; font-weight:900; }
+    .check-items { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .check-item { padding:18px; border:1px solid var(--line); border-radius:17px; background:var(--white); }
+    .check-item h4 { margin:0 0 7px; font:700 1.05rem/1.2 Georgia,serif; }
+    .check-item > p { margin:0; color:var(--muted); font-size:.82rem; }
+    .check-hint { display:inline-flex; margin-top:10px; color:var(--jade); font-size:.7rem; font-weight:850; }
+    .check-status-buttons { display:grid; grid-template-columns:repeat(3,1fr); gap:5px; margin-top:15px; }
+    .check-status-btn { min-height:43px; padding:6px 4px; border:1px solid var(--line); border-radius:10px; color:var(--muted); background:var(--paper-soft); cursor:pointer; font-size:.66rem; font-weight:900; }
+    .check-status-btn:hover, .check-status-btn:focus-visible { border-color:var(--jade); }
+    .check-status-btn[aria-pressed="true"][data-status="estimate"] { color:#6f4b0c; border-color:var(--gold); background:rgba(211,162,75,.20); }
+    .check-status-btn[aria-pressed="true"][data-status="check"] { color:var(--red-deep); border-color:var(--red); background:rgba(196,63,49,.10); }
+    .check-status-btn[aria-pressed="true"][data-status="booked"] { color:var(--jade-deep); border-color:var(--jade); background:var(--jade-soft); }
+    .check-item-meta { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:12px; color:var(--muted); font-size:.68rem; }
+    .check-reviewed { min-height:36px; padding:6px 9px; border:0; border-radius:9px; color:var(--jade); background:var(--jade-soft); cursor:pointer; font-weight:850; }
+    .check-save-status { min-height:24px; margin:14px 2px 0; color:var(--muted); font-size:.78rem; }
+    .source-card { margin-top:22px; padding:24px 28px; border-radius:var(--radius-lg); }
+    .source-card summary { cursor:pointer; font-weight:850; color:var(--jade); }
+    .source-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:17px; }
+    .source-links a { padding:8px 11px; border-radius:10px; background:var(--paper); color:var(--muted); font-size:.82rem; text-decoration:none; }
+    .source-links a:hover { color:var(--jade); }
+
+    .closing {
+      position:relative;
+      padding:100px 20px 130px;
+      color:var(--white);
+      background:var(--ink);
+      text-align:center;
+      overflow:hidden;
+    }
+    .closing::before { content:"中"; position:absolute; inset:50% auto auto 50%; transform:translate(-50%,-50%); color:rgba(255,255,255,.025); font:700 25rem/1 Georgia,serif; }
+    .closing-inner { position:relative; width:min(760px,100%); margin:0 auto; }
+    .closing .eyebrow { justify-content:center; color:#f2c968; }
+    .closing h2 { margin:0; font:700 clamp(2.5rem,6vw,5rem)/.98 Georgia,serif; }
+    .closing p { margin:22px auto 0; max-width:620px; color:rgba(255,255,255,.65); }
+
+    .mobile-nav { display:none; }
+    .back-top {
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:85;
+      width:48px;
+      height:48px;
+      border:0;
+      border-radius:50%;
+      color:var(--white);
+      background:var(--red);
+      box-shadow:0 12px 30px rgba(143,43,36,.28);
+      cursor:pointer;
+      opacity:0;
+      transform:translateY(12px);
+      pointer-events:none;
+      transition:.2s ease;
+    }
+    .back-top.show { opacity:1; transform:none; pointer-events:auto; }
+    .offline-pill {
+      position:fixed;
+      right:18px;
+      top:86px;
+      z-index:90;
+      display:none;
+      padding:9px 13px;
+      border-radius:999px;
+      color:var(--white);
+      background:var(--red-deep);
+      box-shadow:var(--shadow-soft);
+      font-size:.78rem;
+      font-weight:850;
+    }
+    .offline-pill.show { display:block; }
+
+    body.data-saver .hero {
+      background-image:
+        radial-gradient(circle at 78% 30%, rgba(211,162,75,.34), transparent 19rem),
+        linear-gradient(135deg, #082e2a, #0f5b50 62%, #a43a2e);
+    }
+    body.data-saver .hero::before { content:"山"; position:absolute; right:5%; bottom:-8%; z-index:-1; font:700 26rem/1 Georgia,serif; color:rgba(255,255,255,.035); }
+
+    @media (max-width: 980px) {
+      .hero { min-height: 900px; background-position: 62% center; }
+      .hero-inner { grid-template-columns:1fr; gap:35px; padding-top:35px; }
+      .hero-card { width:min(100%,560px); }
+      .section-header { grid-template-columns:1fr; gap:18px; }
+      .overview-grid, .budget-intro { grid-template-columns:1fr; }
+      .stat-panel { grid-template-columns:repeat(3,1fr); }
+      .stat { min-height:110px; flex-direction:column; align-items:flex-start; justify-content:center; }
+      .principles { grid-template-columns:1fr; }
+      .check-items { grid-template-columns:1fr; }
+      .city-head { grid-template-columns:80px 1fr auto; }
+    }
+
+    @media (max-width: 760px) {
+      html { scroll-padding-top:24px; }
+      body { padding-bottom:84px; }
+      .hero { min-height: 810px; background-position: 68% center; background-image:linear-gradient(90deg,rgba(5,28,25,.91),rgba(6,31,28,.52)),linear-gradient(0deg,rgba(6,28,25,.82),transparent 60%),url("./assets/china-journey-hero.webp"); }
+      .hero-nav, .hero-inner, .section, .main-nav-inner, .itinerary-bg .section { width:min(calc(100% - 28px),var(--content)); }
+      .hero-nav { padding:16px 0; }
+      .brand { font-size:.9rem; }
+      .brand-seal { width:38px; height:38px; }
+      .hero-actions .ghost-btn:not(.data-toggle) { display:none; }
+      .ghost-btn { padding:9px 12px; font-size:.82rem; }
+      .hero-inner { margin:auto 0 0; padding:50px 0 42px; }
+      .hero h1 { font-size:clamp(3.8rem,21vw,6rem); }
+      .hero-lead { font-size:1rem; }
+      .hero-meta { gap:8px; }
+      .hero-meta li { font-size:.78rem; padding:8px 10px; }
+      .hero-card { padding:20px; }
+      .mini-route { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:15px; }
+      .mini-stop { grid-template-columns:12px minmax(0,1fr); }
+      .mini-stop small { grid-column:2; text-align:left; }
+      .mini-stop:not(:last-child)::before { display:none; }
+      .main-nav { display:none; }
+      .section { padding:78px 0; }
+      .section-header { margin-bottom:30px; }
+      .section-header h2 { font-size:clamp(2.45rem,13vw,4rem); }
+      .principle-card { padding:26px; min-height:0; gap:22px; }
+      .stat-panel { grid-template-columns:1fr; }
+      .stat { min-height:80px; flex-direction:row; align-items:center; justify-content:space-between; }
+      .route-shell { margin-left:-14px; margin-right:-14px; border-radius:0; padding:27px 20px; }
+      .route-shell-top { align-items:flex-start; flex-direction:column; gap:5px; }
+      .planner-toolbar { position:relative; top:auto; grid-template-columns:1fr; padding:10px; margin-bottom:34px; }
+      .tool-btn { width:100%; }
+      .day-view-switch { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin:-8px 0 16px; padding:4px; border:1px solid var(--line); border-radius:16px; background:var(--paper); }
+      .day-view-switch button { min-height:48px; border:0; border-radius:12px; color:var(--muted); background:transparent; cursor:pointer; font-weight:850; }
+      .day-view-switch button[aria-pressed="true"] { color:var(--white); background:var(--jade); box-shadow:var(--shadow-soft); }
+      .day-view-help { display:block; margin:-7px 2px 15px; color:var(--muted); font-size:.72rem; }
+      .day-pager:not([hidden]) { position:sticky; top:8px; z-index:70; display:grid; grid-template-columns:minmax(66px,auto) minmax(0,1fr) minmax(66px,auto); gap:7px; margin:0 0 18px; padding:7px; border:1px solid var(--line); border-radius:20px; background:rgba(246,241,231,.96); box-shadow:var(--shadow); backdrop-filter:blur(18px); }
+      .day-pager > button { min-width:64px; min-height:58px; padding:5px; border:0; border-radius:14px; color:var(--white); background:var(--jade); cursor:pointer; font-size:.72rem; font-weight:850; }
+      .day-pager > button:disabled { color:var(--muted); background:var(--paper-deep); opacity:.55; cursor:not-allowed; }
+      .day-picker { min-width:0; display:grid; align-content:center; gap:2px; }
+      .day-picker-city { overflow:hidden; color:var(--red); font-size:.66rem; font-weight:900; text-overflow:ellipsis; text-transform:uppercase; white-space:nowrap; }
+      .day-picker select { width:100%; min-height:34px; border:0; color:var(--ink); background:transparent; outline:none; font-weight:850; }
+      #napok[data-mobile-view="single"] .city-block { margin-bottom:20px; }
+      #napok[data-mobile-view="single"] .city-head { grid-template-columns:1fr; gap:4px; margin-bottom:14px; padding-bottom:14px; }
+      #napok[data-mobile-view="single"] .city-number, #napok[data-mobile-view="single"] .nights-badge { display:none; }
+      #napok[data-mobile-view="single"] .city-head h3 { font-size:1.9rem; }
+      #napok[data-mobile-view="single"] .day-card { min-height:min(62svh,680px); scroll-margin-top:96px; }
+      #napok[data-mobile-view="single"] .day-route { display:none; }
+      #napok[data-mobile-view="single"] .day-map-details { margin-top:2px; }
+      #napok[data-mobile-view="single"] .day-map-details > summary { min-height:46px; }
+      .city-block { margin-bottom:60px; scroll-margin-top:20px; }
+      .city-head { grid-template-columns:50px 1fr; gap:13px; }
+      .city-number { font-size:2.7rem; }
+      .city-head h3 { font-size:2.25rem; }
+      .nights-badge { grid-column:2; justify-self:start; }
+      .days-grid { grid-template-columns:1fr; }
+      .day-card { padding:22px; }
+      .budget-hero { min-height:300px; padding:28px; }
+      .budget-summary { grid-template-columns:1fr; }
+      .cost-table th, .cost-table td { padding:14px 16px; font-size:.86rem; }
+      .check-overview { grid-template-columns:1fr; }
+      .check-summary { min-height:90px; grid-template-columns:1fr auto; align-items:center; }
+      .check-toolbar { align-items:stretch; flex-direction:column; }
+      .check-filters { flex-wrap:nowrap; overflow-x:auto; padding-bottom:2px; }
+      .check-filter { flex:0 0 auto; }
+      .check-category { padding:18px 14px; }
+      .check-category-head { align-items:flex-start; }
+      .check-status-buttons { grid-template-columns:1fr; }
+      .check-status-btn { min-height:46px; }
+      .day-map-details > summary { align-items:flex-start; }
+      .day-map-details > summary small { max-width:110px; text-align:right; }
+      .day-map-leg.is-caution { min-height:56px; }
+      .closing { padding-bottom:110px; }
+      .mobile-nav {
+        position:fixed;
+        left:10px;
+        right:10px;
+        bottom:max(10px, env(safe-area-inset-bottom));
+        z-index:100;
+        min-height:64px;
+        display:grid;
+        grid-template-columns:repeat(5,1fr);
+        gap:3px;
+        padding:6px;
+        border-radius:20px;
+        color:var(--white);
+        background:rgba(17,31,27,.94);
+        box-shadow:0 16px 50px rgba(0,0,0,.25);
+        backdrop-filter:blur(18px);
+      }
+      .mobile-nav a, .mobile-nav button { min-height:52px; border:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; border-radius:14px; color:rgba(255,255,255,.68); background:transparent; text-decoration:none; cursor:pointer; font-size:.62rem; font-weight:800; }
+      .mobile-nav a span, .mobile-nav button span { font-size:1.05rem; }
+      .mobile-nav a.active, .mobile-nav button.active { color:var(--white); background:rgba(255,255,255,.11); }
+      .back-top { right:15px; bottom:92px; }
+      .offline-pill { top:15px; right:15px; }
+      .spot-dialog { width:calc(100% - 20px); max-height:calc(100svh - 30px); border-radius:24px; }
+      .spot-dialog-card { max-height:calc(100svh - 30px); padding:30px 22px 24px; }
+      .spot-dialog-close { top:14px; right:14px; }
+      .spot-dialog-mark { margin-bottom:22px; }
+      .spot-dialog h3 { padding-right:8px; font-size:clamp(1.85rem,10vw,2.55rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior:auto !important; transition:none !important; }
+      .spot-dialog[open] { animation:none; }
+    }
+
+    @media print {
+      body { background:#fff; padding:0; font-size:10pt; }
+      body::before, .reading-progress, .hero-actions, .main-nav, .planner-toolbar, .day-view-switch, .day-pager, .mobile-nav, .back-top, .offline-pill, .spot-dialog, .check-toolbar, .check-status-buttons, .check-reviewed { display:none !important; }
+      .hero { min-height:0; padding:35px; color:#111; background:#f0e9dc !important; }
+      .hero-inner { width:100%; padding:20px 0; display:block; }
+      .hero h1 { color:#111; font-size:52pt; text-shadow:none; }
+      .hero h1 span, .hero .eyebrow { color:#9b3026; }
+      .hero-lead, .hero-meta li { color:#333; }
+      .hero-meta li { border-color:#bbb; background:transparent; }
+      .hero-card { display:none; }
+      .section { width:100%; padding:32px 20px; }
+      .section-header h2 { font-size:26pt; }
+      .overview-grid, .budget-intro, .days-grid, .check-items { grid-template-columns:1fr 1fr; }
+      .route-shell { color:#111; background:#eee; }
+      .route-stop { color:#111; }
+      .route-stop small { color:#555; }
+      .city-block { break-before:page; }
+      .day-card, .check-item, .budget-card { break-inside:avoid; box-shadow:none; }
+      .closing { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Ugrás a tartalomhoz</a>
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+  <div class="offline-pill" id="offline-pill" role="status" aria-live="polite">Offline mód</div>
+
+  <header class="hero" id="top">
+    <nav class="hero-nav" aria-label="Fejléc navigáció">
+      <div class="brand"><span class="brand-seal" aria-hidden="true">中</span><span>Kína · 2028</span></div>
+      <div class="hero-actions">
+        <button class="ghost-btn install-btn" id="install-btn" hidden>＋ Telepítés</button>
+        <button class="ghost-btn data-toggle" id="data-toggle" type="button" aria-pressed="false">◐ Adattakarékos</button>
+        <button class="ghost-btn" type="button" onclick="window.print()">⌁ Nyomtatás</button>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Útiterv · városokkal és tervezett dátumokkal</p>
+        <h1>Kína<br><span>és Szingapúr</span></h1>
+        <p class="hero-lead">Császári udvarok, vízesés fölötti óváros, kantoni utcák és futurisztikus horizontok — három utazóra, 34 napra, rugalmas napi sorrenddel.</p>
+        <ul class="hero-meta" aria-label="Utazási adatok">
+          <li>2028. június 14. – július 17.</li>
+          <li>3 utazó</li>
+          <li>34 nap · 31 szálláséj</li>
+          <li>12 állomás</li>
+        </ul>
+      </div>
+      <aside class="hero-card" aria-label="Útvonal röviden">
+        <p class="hero-card-label">Hongkongtól Szingapúrig</p>
+        <div class="mini-route" id="mini-route"></div>
+      </aside>
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Oldal navigáció">
+    <div class="main-nav-inner">
+      <div class="nav-title"><span class="nav-dot"></span>Kína 2028</div>
+      <div class="nav-links">
+        <a href="#attekintes">Áttekintés</a>
+        <a href="#utvonal">Útvonal</a>
+        <a href="#napok">Napi terv</a>
+        <a href="#koltseg">Költség</a>
+        <a href="#felkeszules">Ellenőrzés</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section" id="attekintes">
+      <div class="section-header">
+        <div>
+          <p class="eyebrow">Nem menetrend, hanem iránytű</p>
+          <h2>Egy terv, ami együtt változhat velünk.</h2>
+        </div>
+        <p>A városok és a hozzávetőleges időszakok már megvannak. A napi terv továbbra is a helyszínek sorrendjét mutatja, pontos órarend nélkül; a járatok, foglalások és nyitvatartások szerint még alakítható.</p>
+      </div>
+
+      <div class="overview-grid">
+        <article class="principle-card">
+          <div>
+            <p class="eyebrow">Tervezési alapelv</p>
+            <h3>Legyen elég konkrét az induláshoz, és elég laza a jó döntésekhez.</h3>
+            <p>Hongkong, Makaó és Dél-Kína után Sanghajon, Nanjingon, Xi’anon és Pekingen át jutunk Szecsuánba. Furong óvárosa és Chongqing után Szingapúr zárja az utat. A váltónap mindig az új állomás napjaihoz tartozik.</p>
+          </div>
+          <div class="principles">
+            <div class="principle"><strong>01 · Sorrend</strong><span>Mit mi után érdemes megnézni.</span></div>
+            <div class="principle"><strong>02 · Ritmus</strong><span>Aktív és nyugodtabb napok váltakozva.</span></div>
+            <div class="principle"><strong>03 · Rugalmasság</strong><span>Időjárás és foglalások szerint cserélhető.</span></div>
+          </div>
+        </article>
+        <aside class="stat-panel" aria-label="Útiterv számai">
+          <div class="stat"><span>Teljes út</span><b>34 nap</b></div>
+          <div class="stat"><span>Utazók</span><b>3 fő</b></div>
+          <div class="stat"><span>Megállók</span><b>12 állomás</b></div>
+        </aside>
+      </div>
+
+      <div class="route-shell" id="utvonal">
+        <div class="route-shell-top">
+          <div><p class="eyebrow">Az út íve</p><h3>Hongkongból Szingapúrba</h3></div>
+          <p>Húzd oldalra mobilon · koppints egy városra a napi tervhez</p>
+        </div>
+        <div class="route-scroll"><div class="route-line" id="route-line"></div></div>
+        <p class="route-plan-note">Budapest: indulás június 14., hazaérkezés július 17. · A városi időszakok összesen 31 szálláséjszakát jelentenek; június 14. és július 16. éjszakáját egyelőre utazásra tartjuk fenn. Ez a repülőjegyekkel pontosítandó.</p>
+      </div>
+    </section>
+
+    <div class="itinerary-bg">
+      <section class="section" id="napok">
+        <div class="section-header">
+          <div><p class="eyebrow">34 nap · dátumok és napi sorrend</p><h2>A teljes útiterv.</h2></div>
+          <p>Mobilon válts „Mai nap” nézetre, lapozz a napok között, és nyisd le a sematikus útvonalrajzot. A látnivalók neve továbbra is kattintható.</p>
+        </div>
+
+        <div class="day-view-switch" role="group" aria-label="Útiterv nézete">
+          <button id="view-all-days" type="button" aria-pressed="false" aria-controls="itinerary">Összes nap</button>
+          <button id="view-one-day" type="button" aria-pressed="true" aria-controls="day-pager itinerary"><span aria-hidden="true">日</span> Mai nap</button>
+        </div>
+        <p class="day-view-help">A „Mai nap” a kiválasztott utazási napot jelenti. A dátumok tervezettek; a közös váltónapon már a következő város programja látszik.</p>
+
+        <nav class="day-pager" id="day-pager" aria-label="Napi útiterv lapozása" hidden>
+          <button id="previous-day" type="button"><span aria-hidden="true">←</span><span>Előző</span></button>
+          <label class="day-picker"><span class="day-picker-city" id="day-picker-city"></span><span class="sr-only">Utazási nap kiválasztása</span><select id="day-picker"></select></label>
+          <button id="next-day" type="button"><span>Következő</span><span aria-hidden="true">→</span></button>
+        </nav>
+        <p class="sr-only" id="day-view-status" role="status" aria-live="polite" aria-atomic="true"></p>
+
+        <div class="planner-toolbar" id="planner-filters" aria-label="Útiterv szűrők">
+          <label class="search-wrap"><span class="sr-only">Keresés az útitervben</span><input id="search" type="search" placeholder="Keresés: nagy fal, vízesés, felhőkarcoló…" autocomplete="off"></label>
+          <label><span class="sr-only">Város kiválasztása</span><select id="city-filter"><option value="all">Minden város</option></select></label>
+          <button class="tool-btn" id="travel-filter" type="button" aria-pressed="false">⇄ Utazási napok</button>
+        </div>
+
+        <div class="sr-only" id="filter-status" role="status" aria-live="polite"></div>
+        <div id="itinerary"></div>
+        <div class="empty-state" id="empty-state"><strong>Nincs találat.</strong><br>Próbálj másik várost vagy keresőkifejezést.</div>
+      </section>
+    </div>
+
+    <section class="section" id="koltseg">
+      <div class="section-header">
+        <div><p class="eyebrow">Az új útvonal költségei</p><h2>A keretet ehhez az úthoz árazzuk.</h2></div>
+        <p>A korábbi 35 napos, sivatagi kitérős becslés más útvonalra készült. Az új tervhez Hongkongot, Makaót és Szingapúrt, valamint az új repülő- és vasúti szakaszokat is külön kell árazni.</p>
+      </div>
+      <div class="budget-intro">
+        <article class="budget-hero">
+          <div><p class="eyebrow">34 nap · 3 utazó</p><h3>Az új összeg még nyitott</h3></div>
+          <div class="budget-big"><b>Újraárazandó</b><span>Az alábbi mennyiségek már az új tervből származnak.</span></div>
+        </article>
+        <div class="budget-summary">
+          <article class="budget-card"><small>Szállás</small><strong>31 éjszaka</strong><p>12 állomáson, három főre alkalmas szobával.</p></article>
+          <article class="budget-card"><small>Biztosítás</small><strong>34 nap</strong><p>Június 14. – július 17., az utazási napokkal együtt.</p></article>
+          <article class="budget-card"><small>Utazási éjszakák</small><strong>2 éjszaka</strong><p>Június 14. és július 16.; a járatokkal pontosítandó.</p></article>
+          <article class="budget-card"><small>Külön költségblokk</small><strong>Szingapúr</strong><p>3 szálláséj, helyi programok és a Chongqingból induló repülés.</p></article>
+        </div>
+      </div>
+      <div class="cost-table-wrap">
+        <table class="cost-table">
+          <caption class="sr-only">Az új, 34 napos utazás költségszámításának alapjai</caption>
+          <thead><tr><th scope="col">Kategória</th><th scope="col">Újraárazás alapja</th></tr></thead>
+          <tbody>
+            <tr><td>Nemzetközi repülőjegyek</td><td>Budapest → Hongkong; Chongqing → Szingapúr; Szingapúr → Budapest</td></tr>
+            <tr><td>Szállás</td><td>31 éj · 3 fő · 12 állomás</td></tr>
+            <tr><td>Étkezés</td><td>34 nap; az utazási napok és a célterületek szerint bontva</td></tr>
+            <tr><td>Kínán belüli repülők</td><td>Shenzhen → Sanghaj; Peking → Chengdu</td></tr>
+            <tr><td>Vasúti utazás</td><td>7 tervezett városközi szakasz; Furong kapcsolatai külön ellenőrizendők</td></tr>
+            <tr><td>Hongkong–Makaó–Zhuhai</td><td>Busz vagy komp, határátlépések és helyi transzferek</td></tr>
+            <tr><td>Városon belüli közlekedés</td><td>Metró, busz, taxi és reptéri / pályaudvari transzferek</td></tr>
+            <tr><td>Utasbiztosítás</td><td>34 nap; Kína, Hongkong, Makaó, Szingapúr és átszállások</td></tr>
+            <tr><td>Internet / eSIM</td><td>3 telefon; az összes célterület lefedettségével</td></tr>
+            <tr><td>Belépők és programok</td><td>A kiválasztott főprogramok; a választható kilátók és előadások külön</td></tr>
+            <tr><td>Snack, ital és ajándék</td><td>Külön személyes keret mindhárom utazónak</td></tr>
+            <tr><td>Belépés / adminisztráció</td><td>A 2028-ban érvényes szabályok és szükséges díjak alapján</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="budget-note">Minden összeg tervezési becslés lesz a tényleges ajánlatok megjelenéséig. A végösszeghez először a repülőjegyeket és a 31 szálláséjszakát érdemes kiválasztani.</p>
+    </section>
+
+    <section class="section" id="felkeszules">
+      <div class="section-header">
+        <div><p class="eyebrow">Helyben mentett tervezési állapot</p><h2>2028 előtt ellenőrizendő.</h2></div>
+        <p>Állítsd be, mi még becslés, mit kell hivatalos forrásból újra ellenőrizni, és mit foglaltatok már le. Az állapotok ezen az eszközön maradnak meg.</p>
+      </div>
+
+      <div class="check-overview" id="check-overview" aria-label="Ellenőrzési állapotok összesítése"></div>
+      <div class="check-toolbar">
+        <div class="check-filters" id="check-filters" aria-label="Állapot szerinti szűrés"></div>
+        <button class="check-reset" id="check-reset" type="button">Állapotok alaphelyzetbe</button>
+      </div>
+      <div class="check-groups" id="check-groups"></div>
+      <p class="check-save-status" id="check-save-status" role="status" aria-live="polite">Az állapotok automatikusan mentődnek ezen az eszközön.</p>
+
+      <details class="source-card">
+        <summary>Kiinduló források és későbbi ellenőrzési pontok</summary>
+        <div class="source-links">
+          <a href="https://hu.china-embassy.gov.cn/hu/lsyw/vizum1/" target="_blank" rel="noreferrer">Kínai nagykövetség</a>
+          <a href="https://www.12306.cn/en/index.html" target="_blank" rel="noreferrer">China Railway 12306</a>
+          <a href="https://www.panda.org.cn/en/service/ticket/" target="_blank" rel="noreferrer">Chengdu Panda Base</a>
+          <a href="https://www.macaotourism.gov.mo/en/travelessential/before-you-travel/travelling-to-macao" target="_blank" rel="noreferrer">Utazás Makaóba · hivatalos tájékoztató</a>
+          <a href="https://enghunan.gov.cn/hneng/News/Localnews/202601/t20260106_33887388.html" target="_blank" rel="noreferrer">Furong · Hunan hivatalos oldala</a>
+          <a href="https://zschina.nanjing.gov.cn/zszx/dtxx/202506/t20250626_5593899.html" target="_blank" rel="noreferrer">Nanjing · Zhongshan hivatalos látogatói útmutató</a>
+          <a href="https://www.visitsingapore.com/content/visitsingapore/en/travel-tips/travelling-to-singapore/itineraries/singapore-city-tour-guide/" target="_blank" rel="noreferrer">Szingapúr · hivatalos városkalauz</a>
+          <a href="https://www.jewelchangiairport.com/en/faqs.html" target="_blank" rel="noreferrer">Jewel Changi · látogatási tudnivalók</a>
+          <a href="https://english.beijing.gov.cn/specials/ticketing/index.html" target="_blank" rel="noreferrer">Pekingi jegyinformációk</a>
+          <a href="https://www.mtr.com.hk/en/customer/tickets/octopus_fares.html" target="_blank" rel="noreferrer">Hongkong MTR</a>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="closing">
+    <div class="closing-inner">
+      <p class="eyebrow">Frissített útvonal · 2026. október 23.</p>
+      <h2>Az út még változik.<br>A jó irány már megvan.</h2>
+      <p>A tervezett út 2028. június 14-től július 17-ig tart. A következő lépés a városonkénti szálláskörzetek, a pontos járatok, a Furonghoz vezető vasúti kapcsolat és az új költségkeret véglegesítése.</p>
+    </div>
+  </footer>
+
+  <nav class="mobile-nav" aria-label="Mobil gyorsnavigáció">
+    <button id="mobile-today-open" type="button"><span aria-hidden="true">日</span>Mai nap</button>
+    <a href="#utvonal"><span aria-hidden="true">⌁</span>Útvonal</a>
+    <a href="#napok"><span aria-hidden="true">日</span>Napok</a>
+    <a href="#koltseg"><span aria-hidden="true">¥</span>Költség</a>
+    <a href="#felkeszules"><span aria-hidden="true">✓</span>Ellenőrzés</a>
+  </nav>
+
+  <dialog class="spot-dialog" id="spot-dialog" aria-labelledby="spot-dialog-title" aria-describedby="spot-dialog-copy">
+    <div class="spot-dialog-card">
+      <button class="spot-dialog-close" id="spot-dialog-close" type="button" aria-label="Ablak bezárása">×</button>
+      <div class="spot-dialog-mark" aria-hidden="true"><span class="spot-dialog-step" id="spot-dialog-step">1</span><span>Útvonalpont</span></div>
+      <p class="spot-dialog-kicker" id="spot-dialog-kicker"></p>
+      <h3 id="spot-dialog-title"></h3>
+      <p class="spot-dialog-copy" id="spot-dialog-copy"></p>
+      <p class="spot-dialog-foot"><span aria-hidden="true">✦</span>Ez egy rövid tervezési ismertető. A nyitvatartást, belépést és aktuális szabályokat 2028-ban ellenőrizzük.</p>
+    </div>
+  </dialog>
+
+  <button class="back-top" id="back-top" type="button" aria-label="Vissza az oldal tetejére">↑</button>
+
+  <script src="./trip-data.js"></script>
+  <script src="./spot-descriptions.js"></script>
+  <script>
+    const cities = window.chinaTrip.cities;
+    const routeCities = cities.filter(city => !city.transit);
+    const tripStartTime = Date.parse(`${window.chinaTrip.start}T00:00:00Z`);
+    const tripDateFormatter = new Intl.DateTimeFormat('hu-HU', {month:'short',day:'numeric',weekday:'short',timeZone:'UTC'});
+    function dayDate(dayNumber) {
+      return tripDateFormatter.format(new Date(tripStartTime + (dayNumber - 1) * 86400000));
+    }
+
+    const itineraryEl = document.getElementById('itinerary');
+    const cityFilter = document.getElementById('city-filter');
+    const searchInput = document.getElementById('search');
+    const travelFilter = document.getElementById('travel-filter');
+    const emptyState = document.getElementById('empty-state');
+    const filterStatus = document.getElementById('filter-status');
+    const mobileDayMedia = matchMedia('(max-width: 760px)');
+    const dayEntries = cities.flatMap((city, cityIndex) => city.days.map(day => ({ city, cityIndex, day })));
+    const VIEW_KEY = 'china-2028-mobile-view';
+    const DAY_KEY = 'china-2028-selected-day:2028-06-14';
+    let travelOnly = false;
+
+    function readStored(key, fallback = null) {
+      try { return localStorage.getItem(key) ?? fallback; } catch { return fallback; }
+    }
+
+    function writeStored(key, value) {
+      try { localStorage.setItem(key, String(value)); return true; } catch { return false; }
+    }
+
+    let mobileViewMode = readStored(VIEW_KEY, 'single') === 'all' ? 'all' : 'single';
+    let selectedDayNumber = Number(readStored(DAY_KEY, dayEntries[0].day.n));
+    if (!dayEntries.some(entry => entry.day.n === selectedDayNumber)) selectedDayNumber = dayEntries[0].day.n;
+
+    function safe(text) {
+      return String(text).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+    }
+
+    const longerRouteLegs = Object.freeze({
+      4:{2:'Külön transzfer Tai O felé'},
+      6:{0:'Határátlépés után kijutás a pályaudvarra'},
+      11:{2:'Átutazás az egykori francia negyed felé'},
+      15:{0:'A hegyvidéki helyszínek közötti transzfer'},
+      17:{1:'Visszaút Xi’an belvárosába'},
+      20:{2:'Visszaút Mutianyuból Pekingbe'},
+      22:{0:'Kijutás a Panda Base-től a belvárosba'},
+      29:{1:'Átkelés Ciqikouból a belvárosba'},
+      32:{1:'Metróval Little India felé'}
+    });
+
+    const dayTransferNotes = Object.freeze({
+      4:'Lantau távolabbi részeit összekötő egész napos kirándulás.',
+      5:'Két külön belépési rendszer között utazunk; a busz vagy komp és a helyi transzferek külön tervezendők.',
+      6:'Makaó után itt lépünk be a szárazföldi Kínába, majd Zhuhai felől vonatozunk Guangzhouba.',
+      13:'A Sanghaj–Zhujiajiao oda-vissza transzfert külön kell megtervezni.',
+      16:'Hosszabb vasúti szakasz; az esti városnézés az érkezéstől függ.',
+      17:'A terrakotta hadsereg városon kívül van; a kiút és a belvárosba visszatérés is időt igényel.',
+      20:'Városon kívüli kirándulás Mutianyuhoz, oda-vissza transzferrel.',
+      24:'A Chengdu–Furongzhen kapcsolat a terv egyik külön ellenőrizendő része; a 2028-as menetrend és az átszállás még nyitott.',
+      25:'A Furongzhen–Chongqing vasúti kapcsolatot és az érkezési pályaudvart később pontosítjuk.',
+      28:'A Chongqing–Wulong oda-vissza utazást az egész napos kirándulás részeként kell tervezni.',
+      30:'Nemzetközi utazási nap, külön szingapúri belépéssel.',
+      33:'A Jewel a repülőtér nyilvános oldalán található; a látogatást a csomagleadáshoz és az induláshoz igazítjuk.'
+    });
+
+    function getRouteMode(stop) {
+      if (/repülés/i.test(stop)) return 'repülő';
+      if (/gyorsvasút/i.test(stop)) return 'gyorsvasút';
+      if (/vasúti/i.test(stop)) return 'vasút';
+      if (/határátlépés|átkelés/i.test(stop)) return 'határátlépés';
+      if (/repülőtér/i.test(stop)) return 'reptéri transzfer';
+      if (/komp|hajózás|hajós/i.test(stop)) return 'vízi út';
+      if (/felvonó|kötélpálya/i.test(stop)) return 'felvonó';
+      if (/monorail/i.test(stop)) return 'monorail';
+      if (/utazás/i.test(stop)) return 'távolsági út';
+      return '';
+    }
+
+    function renderDayRouteMap(city, day, expanded) {
+      const longerLegs = longerRouteLegs[day.n] || {};
+      const firstMode = getRouteMode(day.route[0]);
+      const notice = dayTransferNotes[day.n] || (day.travel && firstMode ? 'Távolsági utazás a nap elején; a pontos menetidőt 2028-ban ellenőrizzük.' : '');
+      return `<details class="day-map-details" ${expanded ? 'open' : ''}>
+        <summary><span>⌁ Napi útvonalrajz</span><small>Sorrend, nem méretarány</small></summary>
+        <section class="day-map" aria-label="${day.n}. nap sematikus útvonala">
+          ${notice ? `<p class="day-map-alert"><span aria-hidden="true">!</span>${safe(notice)}</p>` : ''}
+          <ol class="day-map-list">${day.route.map((stop, index) => {
+            const mode = getRouteMode(stop);
+            const longerLabel = longerLegs[index];
+            return `<li class="day-map-stop">
+              <div class="day-map-row"><span class="day-map-node" aria-hidden="true">${index + 1}</span><button class="spot-trigger" type="button" data-spot="${safe(stop)}" data-city="${safe(city.name)}" data-day="${day.n}" data-step="${index + 1}" aria-haspopup="dialog" aria-label="${safe(stop)} – rövid leírás megnyitása"><span class="day-map-place"><strong>${safe(stop)}</strong>${mode ? `<small>${safe(mode)}</small>` : ''}</span><span class="spot-info" aria-hidden="true">i</span></button></div>
+              ${index < day.route.length - 1 ? `<div class="day-map-leg ${longerLabel ? 'is-caution' : ''}">${longerLabel ? `<span class="day-map-leg-label">Valószínűleg hosszabb · ${safe(longerLabel)}</span>` : ''}</div>` : ''}
+            </li>`;
+          }).join('')}</ol>
+          <p class="day-map-foot">A vonal csak a sorrendet mutatja. A pontos távolságokat, menetidőket és útvonalakat 2028-ban ellenőrizzük.</p>
+        </section>
+      </details>`;
+    }
+
+    function isSingleDayView() {
+      return mobileDayMedia.matches && mobileViewMode === 'single';
+    }
+
+    function renderStaticRoute() {
+      document.getElementById('mini-route').innerHTML = routeCities.map((city, index) =>
+        `<div class="mini-stop"><span class="mini-dot"></span><strong>${safe(city.name)}</strong><small>${safe(city.period)} · ${city.nights} éj</small></div>`
+      ).join('');
+      document.getElementById('route-line').innerHTML = routeCities.map((city, index) =>
+        `<button class="route-stop" type="button" data-jump="${city.id}" aria-label="Ugrás ide: ${safe(city.name)}, ${safe(city.period)}"><i>${index + 1}</i><strong>${safe(city.name)}</strong><small>${safe(city.period)}<br>${city.nights} éj</small></button>`
+      ).join('');
+      cityFilter.insertAdjacentHTML('beforeend', cities.map(city => `<option value="${city.id}">${safe(city.name)}</option>`).join(''));
+    }
+
+    const napokSection = document.getElementById('napok');
+    const plannerFilters = document.getElementById('planner-filters');
+    const dayPager = document.getElementById('day-pager');
+    const dayPicker = document.getElementById('day-picker');
+    const dayPickerCity = document.getElementById('day-picker-city');
+    const previousDayButton = document.getElementById('previous-day');
+    const nextDayButton = document.getElementById('next-day');
+    const viewAllDaysButton = document.getElementById('view-all-days');
+    const viewOneDayButton = document.getElementById('view-one-day');
+    const mobileTodayButton = document.getElementById('mobile-today-open');
+    const dayViewStatus = document.getElementById('day-view-status');
+
+    dayPicker.innerHTML = dayEntries.map(({city, day}) => `<option value="${day.n}">${day.n}. nap · ${safe(dayDate(day.n))} · ${safe(city.name)} · ${safe(day.title)}</option>`).join('');
+
+    function syncDayViewUi(announce = false) {
+      const active = isSingleDayView();
+      const entry = dayEntries.find(item => item.day.n === selectedDayNumber);
+      const index = dayEntries.indexOf(entry);
+      napokSection.dataset.mobileView = active ? 'single' : 'all';
+      plannerFilters.hidden = active;
+      dayPager.hidden = !active;
+      viewAllDaysButton.setAttribute('aria-pressed', String(!active));
+      viewOneDayButton.setAttribute('aria-pressed', String(active));
+      if (!entry) return;
+      dayPicker.value = String(entry.day.n);
+      dayPickerCity.textContent = `${entry.city.name} · ${entry.day.n} / ${dayEntries.length}`;
+      previousDayButton.disabled = index === 0;
+      nextDayButton.disabled = index === dayEntries.length - 1;
+      previousDayButton.setAttribute('aria-label', index > 0 ? `Előző nap: ${dayEntries[index - 1].day.n}. nap – ${dayEntries[index - 1].day.title}` : 'Nincs előző nap');
+      nextDayButton.setAttribute('aria-label', index < dayEntries.length - 1 ? `Következő nap: ${dayEntries[index + 1].day.n}. nap – ${dayEntries[index + 1].day.title}` : 'Nincs következő nap');
+      if (announce) dayViewStatus.textContent = `${entry.day.n}. nap, ${dayDate(entry.day.n)}, ${entry.city.name}: ${entry.day.title}.`;
+    }
+
+    function setMobileView(mode, shouldScroll = false) {
+      mobileViewMode = mode;
+      writeStored(VIEW_KEY, mode);
+      renderItinerary();
+      if (shouldScroll) document.getElementById('napok').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    }
+
+    function setSelectedDay(dayNumber, shouldScroll = true) {
+      if (!dayEntries.some(entry => entry.day.n === dayNumber)) return;
+      selectedDayNumber = dayNumber;
+      writeStored(DAY_KEY, dayNumber);
+      renderItinerary();
+      if (shouldScroll) requestAnimationFrame(() => itineraryEl.querySelector(`.day-card[data-day="${selectedDayNumber}"]`)?.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'}));
+    }
+
+    function moveSelectedDay(offset) {
+      const index = dayEntries.findIndex(entry => entry.day.n === selectedDayNumber);
+      const target = dayEntries[index + offset];
+      if (target) setSelectedDay(target.day.n);
+    }
+
+    function renderItinerary() {
+      const query = searchInput.value.trim().toLocaleLowerCase('hu');
+      const selected = cityFilter.value;
+      const singleDayView = isSingleDayView();
+      let visibleDays = 0;
+      itineraryEl.innerHTML = cities.map((city, cityIndex) => {
+        if (!singleDayView && selected !== 'all' && selected !== city.id) return '';
+        const days = city.days.filter(day => {
+          if (singleDayView) return day.n === selectedDayNumber;
+          if (travelOnly && !day.travel) return false;
+          if (!query) return true;
+          const haystack = [
+            city.name,
+            city.blurb,
+            day.title,
+            dayDate(day.n),
+            day.note,
+            ...day.route,
+            ...day.route.map(stop => window.spotDescriptions?.[stop] || '')
+          ].join(' ').toLocaleLowerCase('hu');
+          return haystack.includes(query);
+        });
+        if (!days.length) return '';
+        visibleDays += days.length;
+        return `<section class="city-block" id="city-${city.id}" data-city="${city.id}">
+          <header class="city-head">
+            <div class="city-number">${city.transit ? '✈' : String(routeCities.indexOf(city) + 1).padStart(2,'0')}</div>
+            <div><p class="city-period">2028. ${safe(city.period)}</p><h3>${safe(city.name)}</h3><p>${safe(city.blurb)}</p></div>
+            <span class="nights-badge">${city.transit ? 'Utazási nap' : `${city.nights} éjszaka`}</span>
+          </header>
+          <div class="days-grid">${days.map(day => `<article class="day-card ${day.travel ? 'travel' : ''}" data-day="${day.n}">
+            <div class="day-top"><span class="day-number">${day.n}. nap</span><span class="tags"><span class="tag">${safe(day.load)}</span>${day.travel ? '<span class="tag travel-tag">utazás</span>' : ''}</span></div>
+            <p class="day-date">${safe(dayDate(day.n))}</p>
+            <h4>${safe(day.title)}</h4>
+            <ol class="day-route">${day.route.map((stop, stopIndex) => `<li><button class="spot-trigger" type="button" data-spot="${safe(stop)}" data-city="${safe(city.name)}" data-day="${day.n}" data-step="${stopIndex + 1}" aria-haspopup="dialog" aria-label="${safe(stop)} – rövid leírás megnyitása"><span>${safe(stop)}</span><span class="spot-info" aria-hidden="true">i</span></button></li>`).join('')}</ol>
+            ${renderDayRouteMap(city, day, singleDayView)}
+            <p class="day-note">${safe(day.note)}</p>
+          </article>`).join('')}</div>
+        </section>`;
+      }).join('');
+      emptyState.classList.toggle('show', visibleDays === 0);
+      filterStatus.textContent = visibleDays === 0 ? 'Nincs találat.' : singleDayView ? `${selectedDayNumber}. nap látható.` : `${visibleDays} nap látható.`;
+      syncDayViewUi(false);
+    }
+
+    renderStaticRoute();
+    renderItinerary();
+
+    searchInput.addEventListener('input', renderItinerary);
+    cityFilter.addEventListener('change', renderItinerary);
+    viewAllDaysButton.addEventListener('click', () => setMobileView('all'));
+    viewOneDayButton.addEventListener('click', () => setMobileView('single'));
+    previousDayButton.addEventListener('click', () => moveSelectedDay(-1));
+    nextDayButton.addEventListener('click', () => moveSelectedDay(1));
+    dayPicker.addEventListener('change', event => setSelectedDay(Number(event.target.value)));
+    mobileTodayButton.addEventListener('click', () => setMobileView('single', true));
+    mobileDayMedia.addEventListener('change', () => renderItinerary());
+
+    const spotDialog = document.getElementById('spot-dialog');
+    const spotDialogClose = document.getElementById('spot-dialog-close');
+    const spotDialogTitle = document.getElementById('spot-dialog-title');
+    const spotDialogCopy = document.getElementById('spot-dialog-copy');
+    const spotDialogKicker = document.getElementById('spot-dialog-kicker');
+    const spotDialogStep = document.getElementById('spot-dialog-step');
+    const spotDescriptions = window.spotDescriptions || {};
+
+    itineraryEl.addEventListener('click', event => {
+      const trigger = event.target.closest('.spot-trigger');
+      if (!trigger) return;
+      const name = trigger.dataset.spot;
+      spotDialogTitle.textContent = name;
+      spotDialogCopy.textContent = spotDescriptions[name] || `${name} az aznapi útvonal egyik állomása. A részletes programot és a látogatási feltételeket az induláshoz közelebb pontosítjuk.`;
+      spotDialogKicker.textContent = `${trigger.dataset.city} · ${dayDate(Number(trigger.dataset.day))} · ${trigger.dataset.day}. nap`;
+      spotDialogStep.textContent = trigger.dataset.step;
+      document.body.classList.add('modal-open');
+      if (!spotDialog.open) spotDialog.showModal();
+    });
+    spotDialogClose.addEventListener('click', () => spotDialog.close());
+    spotDialog.addEventListener('click', event => {
+      if (event.target === spotDialog) spotDialog.close();
+    });
+    spotDialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
+
+    travelFilter.addEventListener('click', () => {
+      travelOnly = !travelOnly;
+      travelFilter.setAttribute('aria-pressed', String(travelOnly));
+      travelFilter.textContent = travelOnly ? '✓ Utazási napok' : '⇄ Utazási napok';
+      renderItinerary();
+    });
+    document.getElementById('route-line').addEventListener('click', event => {
+      const button = event.target.closest('[data-jump]');
+      if (!button) return;
+      if (mobileDayMedia.matches) {
+        const entry = dayEntries.find(item => item.city.id === button.dataset.jump);
+        if (entry) {
+          mobileViewMode = 'single';
+          writeStored(VIEW_KEY, 'single');
+          setSelectedDay(entry.day.n, false);
+        }
+        document.getElementById('napok').scrollIntoView({behavior:'smooth'});
+        return;
+      }
+      cityFilter.value = button.dataset.jump;
+      searchInput.value = '';
+      travelOnly = false;
+      travelFilter.setAttribute('aria-pressed','false');
+      travelFilter.textContent = '⇄ Utazási napok';
+      renderItinerary();
+      document.getElementById('napok').scrollIntoView({behavior:'smooth'});
+    });
+
+    const CHECK_STORAGE_KEY = 'china-2028-check-center:2028-06-14:v2';
+    const CHECK_STATUSES = Object.freeze({
+      estimate:{label:'Becslés',icon:'≈'},
+      check:{label:'Ellenőrizendő',icon:'!'},
+      booked:{label:'Lefoglalva / kész',icon:'✓'}
+    });
+    const checkCategories = [
+      {id:'visa',label:'Vízum és belépés',icon:'护'},
+      {id:'tickets',label:'Jegyek és foglalások',icon:'票'},
+      {id:'hours',label:'Nyitvatartások',icon:'时'},
+      {id:'insurance',label:'Biztosítás',icon:'险'},
+      {id:'internet',label:'Internet és offline csomag',icon:'网'},
+      {id:'transport',label:'Közlekedés',icon:'行'}
+    ];
+    const checkItems = [
+      {id:'visa-mainland',category:'visa',title:'Szárazföldi Kína belépési szabályai',detail:'A június 19. – július 13. közötti szárazföldi tartózkodás 2028-as feltételei, Makaó felőli belépéssel.',hint:'2028 tavaszán',initialStatus:'check'},
+      {id:'visa-hongkong',category:'visa',title:'Hongkong külön belépési feltételei',detail:'A szárazföldi résztől eltérő szabályokat is külön ellenőrizzük.',hint:'Indulás előtt 3–6 hónappal',initialStatus:'check'},
+      {id:'visa-macao',category:'visa',title:'Makaó külön belépési feltételei',detail:'Hongkongból Makaóba utazunk június 18-án, majd június 19-én belépünk a szárazföldi Kínába.',hint:'Indulás előtt 3–6 hónappal',initialStatus:'check'},
+      {id:'visa-singapore',category:'visa',title:'Szingapúri belépés és érkezési adatlap',detail:'A július 13–16-i tartózkodásra vonatkozó belépési feltételek és az aktuális érkezési nyilatkozat.',hint:'2028 tavaszán, majd indulás előtt',initialStatus:'check'},
+      {id:'passport-validity',category:'visa',title:'Mindhárom útlevél érvényessége',detail:'Lejárat, üres oldalak és az utazáshoz szükséges tartalék érvényesség.',hint:'Foglalás előtt',initialStatus:'estimate'},
+      {id:'flight-international',category:'tickets',title:'Nemzetközi repülőjegyek',detail:'Budapest–Hongkong június 14–15., Chongqing–Szingapúr július 13., Szingapúr–Budapest július 16–17.; poggyásszal és az átszállásokkal együtt.',hint:'Menetrendnyitástól',initialStatus:'estimate'},
+      {id:'flight-domestic',category:'tickets',title:'Belföldi repülőjegyek',detail:'A hosszabb városközi szakaszok járatai és poggyászfeltételei.',hint:'Menetrendnyitás után',initialStatus:'estimate'},
+      {id:'rail-tickets',category:'tickets',title:'Gyorsvasúti jegyek',detail:'Az összes vasúti szakasz, útlevéladatok, jegynyitás és három közeli ülőhely ellenőrzése.',hint:'Jegynyitáskor',initialStatus:'estimate'},
+      {id:'attraction-tickets',category:'tickets',title:'Előre foglalandó látnivalók',detail:'Tiltott Város, Terrakotta Hadsereg, Panda Base, Furong és a kiválasztott szingapúri programok.',hint:'Városonként külön',initialStatus:'check'},
+      {id:'hotel-bookings',category:'tickets',title:'31 szálláséjszaka, 12 állomás',detail:'Három főre alkalmas szobák; külön ellenőrizendő a június 14-i és július 16-i utazási éjszaka a repülőjegyek alapján.',hint:'Járatok kiválasztása után',initialStatus:'estimate'},
+      {id:'weekly-closures',category:'hours',title:'Heti zárónapok',detail:'A napi sorrendet összevetjük a múzeumok és látnivalók pihenőnapjaival.',hint:'2028-as dátumok után',initialStatus:'check'},
+      {id:'timed-entry',category:'hours',title:'Időkapuk és napi limitek',detail:'Megnézzük, hol kell előre választani belépési idősávot.',hint:'Foglalási szabályok megjelenésekor',initialStatus:'check'},
+      {id:'seasonal-hours',category:'hours',title:'Nyári nyitvatartás',detail:'Esti programok, hőség miatti módosítások és szezonális lezárások.',hint:'Indulás előtt 1 hónappal',initialStatus:'estimate'},
+      {id:'insurance-duration',category:'insurance',title:'34 teljes nap biztosítása',detail:'2028. június 14. – július 17., a ki- és hazautazási nappal együtt; a szerződés utazási időkorlátját is ellenőrizzük.',hint:'Kötés előtt',initialStatus:'check'},
+      {id:'insurance-regions',category:'insurance',title:'Kína, Hongkong, Makaó és Szingapúr fedezete',detail:'Minden célterület és az összes átszállás szerepeljen a területi fedezetben.',hint:'Kötés előtt',initialStatus:'check'},
+      {id:'insurance-extras',category:'insurance',title:'Orvosi, késési és poggyászfedezet',detail:'A magasabb értékű elektronika és az aktív kirándulások feltételei.',hint:'Ajánlatok összevetésekor',initialStatus:'estimate'},
+      {id:'internet-esim',category:'internet',title:'eSIM vagy roaming mindhárom telefonra',detail:'Kína, Hongkong, Makaó és Szingapúr lefedettsége, kompatibilitás, adatkeret és hotspot.',hint:'Indulás előtt 1–2 hónappal',initialStatus:'estimate'},
+      {id:'internet-services',category:'internet',title:'Szükséges szolgáltatások próbája',detail:'Térkép, fordító, fizetés és üzenetküldés működésének itthoni tesztje.',hint:'Indulás előtt 2 héttel',initialStatus:'check'},
+      {id:'offline-pack',category:'internet',title:'Offline jegyek és címek letöltése',detail:'Szálláscímek, útlevelek másolatai, foglalások és fontos elérhetőségek.',hint:'Indulás előtti héten',initialStatus:'estimate'},
+      {id:'rail-account',category:'transport',title:'12306-regisztráció és útlevéladatok',detail:'Mindhárom utazó adatainak és azonosításának előkészítése.',hint:'Jegyvásárlás előtt',initialStatus:'estimate'},
+      {id:'transport-schedules',category:'transport',title:'Vonat- és belföldi járatok menetrendje',detail:'A városok közötti napok tényleges indulási és érkezési ideje.',hint:'Menetrendnyitáskor',initialStatus:'check'},
+      {id:'border-crossing',category:'transport',title:'Hongkong–Makaó–Zhuhai átkelések',detail:'Június 18-án busz vagy komp Makaóba; június 19-én határátlépés és továbbutazás Guangzhouba.',hint:'Indulás előtt 1 hónappal',initialStatus:'check'},
+      {id:'furong-rail',category:'transport',title:'Chengdu–Furongzhen–Chongqing kapcsolat',detail:'Július 7–8.: a pontos vonatok, átszállások, érkezési állomások és az óvárosi transzfer megtervezése.',hint:'Menetrend megjelenésekor',initialStatus:'check'},
+      {id:'station-transfers',category:'transport',title:'Repülőtéri és pályaudvari transzferek',detail:'Melyik terminálra vagy állomásra érkezünk, és hogyan jutunk a szállásra.',hint:'Szállások lefoglalása után',initialStatus:'estimate'}
+    ];
+
+    const checkOverview = document.getElementById('check-overview');
+    const checkFilters = document.getElementById('check-filters');
+    const checkGroups = document.getElementById('check-groups');
+    const checkSaveStatus = document.getElementById('check-save-status');
+    let activeCheckFilter = 'all';
+
+    function loadCheckState() {
+      try {
+        const parsed = JSON.parse(readStored(CHECK_STORAGE_KEY, '{}'));
+        return parsed && parsed.schema === 1 && parsed.items && typeof parsed.items === 'object' ? parsed.items : {};
+      } catch { return {}; }
+    }
+
+    let checkState = loadCheckState();
+
+    function todayIso() {
+      const now = new Date();
+      return new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0,10);
+    }
+
+    function itemState(item) {
+      const saved = checkState[item.id] || {};
+      return {
+        status: CHECK_STATUSES[saved.status] ? saved.status : item.initialStatus,
+        checkedAt: /^\d{4}-\d{2}-\d{2}$/.test(saved.checkedAt || '') ? saved.checkedAt : ''
+      };
+    }
+
+    function formatCheckedDate(iso) {
+      if (!iso) return 'Még nincs ellenőrizve';
+      return new Intl.DateTimeFormat('hu-HU',{year:'numeric',month:'short',day:'numeric'}).format(new Date(`${iso}T12:00:00`));
+    }
+
+    function saveCheckState(message = 'Mentve ezen az eszközön.') {
+      const ok = writeStored(CHECK_STORAGE_KEY, JSON.stringify({schema:1,updatedAt:new Date().toISOString(),items:checkState}));
+      checkSaveStatus.textContent = ok ? message : 'A változás működik, de ezen az eszközön nem menthető tartósan.';
+    }
+
+    function checkCounts() {
+      return checkItems.reduce((counts,item) => {
+        counts[itemState(item).status] += 1;
+        return counts;
+      },{estimate:0,check:0,booked:0});
+    }
+
+    function renderCheckCenter() {
+      const counts = checkCounts();
+      checkOverview.innerHTML = Object.entries(CHECK_STATUSES).map(([status,meta]) => `<button class="check-summary ${activeCheckFilter === status ? 'active' : ''}" type="button" data-check-filter="${status}" aria-pressed="${activeCheckFilter === status}"><small>${meta.icon} ${meta.label}</small><strong>${counts[status]}</strong></button>`).join('');
+      checkFilters.innerHTML = `<button class="check-filter ${activeCheckFilter === 'all' ? 'active' : ''}" type="button" data-check-filter="all" aria-pressed="${activeCheckFilter === 'all'}">Mind · ${checkItems.length}</button>${Object.entries(CHECK_STATUSES).map(([status,meta]) => `<button class="check-filter ${activeCheckFilter === status ? 'active' : ''}" type="button" data-check-filter="${status}" aria-pressed="${activeCheckFilter === status}">${meta.icon} ${meta.label} · ${counts[status]}</button>`).join('')}`;
+      checkGroups.innerHTML = checkCategories.map(category => {
+        const categoryItems = checkItems.filter(item => item.category === category.id && (activeCheckFilter === 'all' || itemState(item).status === activeCheckFilter));
+        if (!categoryItems.length) return '';
+        const needCheck = checkItems.filter(item => item.category === category.id && itemState(item).status === 'check').length;
+        return `<section class="check-category" aria-labelledby="check-category-${category.id}">
+          <header class="check-category-head"><span class="check-category-icon" aria-hidden="true">${category.icon}</span><h3 id="check-category-${category.id}">${safe(category.label)}</h3><span>${needCheck} ellenőrizendő</span></header>
+          <div class="check-items">${categoryItems.map(item => {
+            const state = itemState(item);
+            return `<article class="check-item" data-check-item="${item.id}"><h4>${safe(item.title)}</h4><p>${safe(item.detail)}</p><span class="check-hint">⌁ ${safe(item.hint)}</span>
+              <div class="check-status-buttons" role="group" aria-label="Állapot kiválasztása ehhez: ${safe(item.title)}">${Object.entries(CHECK_STATUSES).map(([status,meta]) => `<button class="check-status-btn" type="button" data-check-id="${item.id}" data-status="${status}" aria-pressed="${state.status === status}">${meta.icon} ${meta.label}</button>`).join('')}</div>
+              <div class="check-item-meta"><span>${state.checkedAt ? `<time datetime="${state.checkedAt}">${formatCheckedDate(state.checkedAt)}</time>` : 'Még nincs ellenőrizve'}</span><button class="check-reviewed" type="button" data-reviewed-id="${item.id}">Ma ellenőriztem</button></div>
+            </article>`;
+          }).join('')}</div>
+        </section>`;
+      }).join('') || '<p class="empty-state show">Ebben az állapotban nincs tétel.</p>';
+    }
+
+    function setCheckFilter(filter) {
+      if (filter !== 'all' && !CHECK_STATUSES[filter]) return;
+      activeCheckFilter = filter;
+      renderCheckCenter();
+    }
+
+    [checkOverview,checkFilters].forEach(container => container.addEventListener('click', event => {
+      const button = event.target.closest('[data-check-filter]');
+      if (button) setCheckFilter(button.dataset.checkFilter);
+    }));
+
+    checkGroups.addEventListener('click', event => {
+      const statusButton = event.target.closest('[data-check-id][data-status]');
+      const reviewedButton = event.target.closest('[data-reviewed-id]');
+      if (statusButton) {
+        const id = statusButton.dataset.checkId;
+        checkState[id] = {status:statusButton.dataset.status,checkedAt:todayIso()};
+        saveCheckState();
+        renderCheckCenter();
+        requestAnimationFrame(() => checkGroups.querySelector(`[data-check-id="${id}"][data-status="${statusButton.dataset.status}"]`)?.focus());
+      } else if (reviewedButton) {
+        const id = reviewedButton.dataset.reviewedId;
+        const item = checkItems.find(candidate => candidate.id === id);
+        if (!item) return;
+        checkState[id] = {...itemState(item),checkedAt:todayIso()};
+        saveCheckState('Az ellenőrzés dátuma frissítve és elmentve.');
+        renderCheckCenter();
+        requestAnimationFrame(() => checkGroups.querySelector(`[data-reviewed-id="${id}"]`)?.focus());
+      }
+    });
+
+    document.getElementById('check-reset').addEventListener('click', () => {
+      if (!confirm('Biztosan visszaállítod az összes ellenőrzési állapotot?')) return;
+      checkState = {};
+      activeCheckFilter = 'all';
+      saveCheckState('Az alapállapot visszaállítva.');
+      renderCheckCenter();
+    });
+
+    renderCheckCenter();
+
+    const progress = document.getElementById('reading-progress');
+    const backTop = document.getElementById('back-top');
+    function onScroll() {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = `${max > 0 ? Math.min(100, scrollY / max * 100) : 0}%`;
+      backTop.classList.toggle('show', scrollY > 700);
+    }
+    addEventListener('scroll', onScroll, {passive:true});
+    backTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
+
+    const navTargets = [...document.querySelectorAll('#attekintes, #utvonal, #napok, #koltseg, #felkeszules')];
+    const navLinks = [...document.querySelectorAll('.nav-links a, .mobile-nav a')];
+    const observer = new IntersectionObserver(entries => {
+      const active = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!active) return;
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${active.target.id}` && !(isSingleDayView() && active.target.id === 'napok')));
+      mobileTodayButton.classList.toggle('active', isSingleDayView() && active.target.id === 'napok');
+    }, {rootMargin:'-28% 0px -58% 0px', threshold:[0,.15,.5]});
+    navTargets.forEach(target => observer.observe(target));
+
+    const dataToggle = document.getElementById('data-toggle');
+    const savedDataMode = localStorage.getItem('china-data-saver');
+    const prefersSaving = navigator.connection?.saveData === true;
+    if (savedDataMode === 'true' || (savedDataMode === null && prefersSaving)) {
+      document.body.classList.add('data-saver');
+      dataToggle.setAttribute('aria-pressed','true');
+      dataToggle.textContent = '● Adattakarékos';
+    }
+    dataToggle.addEventListener('click', () => {
+      const active = document.body.classList.toggle('data-saver');
+      localStorage.setItem('china-data-saver', String(active));
+      dataToggle.setAttribute('aria-pressed', String(active));
+      dataToggle.textContent = active ? '● Adattakarékos' : '◐ Adattakarékos';
+    });
+
+    const offlinePill = document.getElementById('offline-pill');
+    function updateOnlineState() { offlinePill.classList.toggle('show', !navigator.onLine); }
+    addEventListener('online', updateOnlineState);
+    addEventListener('offline', updateOnlineState);
+    updateOnlineState();
+
+    let installPrompt;
+    const installBtn = document.getElementById('install-btn');
+    addEventListener('beforeinstallprompt', event => {
+      event.preventDefault();
+      installPrompt = event;
+      installBtn.hidden = false;
+    });
+    installBtn.addEventListener('click', async () => {
+      if (!installPrompt) return;
+      installPrompt.prompt();
+      await installPrompt.userChoice;
+      installPrompt = null;
+      installBtn.hidden = true;
+    });
+
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
