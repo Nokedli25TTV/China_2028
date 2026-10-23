@@ -448,6 +448,17 @@
     .route-shell .city-preview-blurb { margin: 0; color: rgba(255,255,255,.86); font-size: 1rem; line-height: 1.5; }
     .city-preview-jump { align-self: flex-start; margin-top: 8px; border: 0; border-radius: 999px; padding: 12px 18px; font-family: inherit; font-size: .9rem; font-weight: 800; color: var(--ink); background: var(--gold); cursor: pointer; }
     .city-preview-jump:hover, .city-preview-jump:focus-visible { background: #e2b35f; }
+    .vax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 22px; }
+    .vax-grid .source-card { margin: 0; }
+    .vax-list { margin: 10px 0 0; padding-left: 20px; color: var(--muted); font-size: .92rem; line-height: 1.55; }
+    .vax-list li { margin: 6px 0; }
+    .vax-table { min-width: 860px; }
+    .vax-table td, .vax-table th { vertical-align: top; }
+    .vax-subtitle { margin: 34px 0 6px; font: 700 1.25rem Georgia, serif; color: var(--ink); }
+    .vax-note { margin: 12px 2px 0; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 760px) {
+      .vax-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 760px) {
       .city-preview { grid-template-columns: 1fr; }
       .city-preview-photo { min-height: 220px; }
@@ -1071,6 +1082,7 @@
         <a href="#utvonal">Útvonal</a>
         <a href="#napok">Napi terv</a>
         <a href="#koltseg">Költség</a>
+        <a href="#egeszseg">Egészség</a>
         <a href="#felkeszules">Ellenőrzés</a>
       </div>
     </div>
@@ -1221,6 +1233,91 @@
           <ul class="budget-source-list" id="budget-sources"></ul>
         </details>
       </div>
+    </section>
+
+    <section class="section" id="egeszseg">
+      <div class="section-header">
+        <div><p class="eyebrow">Út előtt · 2028 tavasz</p><h2>Oltások és egészségügyi felkészülés</h2></div>
+        <p>Magyar útlevéllel a belépéshez nincs kötelező oltás ezen az útvonalon. Az alábbi oltások a 34 napos út kockázataihoz igazodnak. A végleges tervet szakmai tanácsadáson kell összeállítani, telefonon nem adnak egyéni javaslatot.</p>
+      </div>
+
+      <div class="budget-summary">
+        <article class="budget-card"><small>Alap csomag · fejenként</small><strong>155 110 Ft</strong><p>Tanácsadás, hepatitis A, hastífusz és japán agyvelőgyulladás (2 adag).</p></article>
+        <article class="budget-card"><small>Alap csomag · 5 fő</small><strong>775 550 Ft</strong><p>Csapatra összesen, a fenti fejenkénti összeggel.</p></article>
+        <article class="budget-card"><small>Alap csomag · 6 fő</small><strong>930 660 Ft</strong><p>Csapatra összesen, a fenti fejenkénti összeggel.</p></article>
+        <article class="budget-card"><small>Látogatás · alap csomag</small><strong>2 alkalom</strong><p>A japán agyvelőgyulladásnál a két adag között 28 nap telik el.</p></article>
+      </div>
+
+      <h3 class="vax-subtitle">Ajánlott oltások</h3>
+      <div class="budget-scroll">
+        <table class="cost-table vax-table">
+          <thead><tr><th scope="col">Oltás</th><th scope="col">Miért</th><th scope="col">Adag · látogatás</th><th scope="col">Ár / adag</th><th scope="col">Fejenként</th><th scope="col">Mikor</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Szakmai tanácsadás</th><td>Egyéni javaslat, mielőtt bármit beadnak.</td><td>1 alkalom</td><td>5 000 Ft</td><td>5 000 Ft</td><td>2–3 hónappal az út előtt</td></tr>
+            <tr><th scope="row">Hepatitis A<br><small>Havrix 1440</small></th><td>Ajánlott, ha nincs védettség. Víz és étel útján terjed.</td><td>1 adag · 1 alkalom</td><td>21 179 Ft<br><small>15 007 + 6 172 beadás</small></td><td>21 179 Ft</td><td>legalább 2 héttel előtte; egy adag kb. 1 évig véd</td></tr>
+            <tr><th scope="row">Hastífusz<br><small>Typhim-Vi</small></th><td>Ajánlott: egy hónapnál hosszabb kínai tartózkodás és vidéki szakasz.</td><td>1 adag · 1 alkalom</td><td>26 587 Ft<br><small>20 415 + 6 172 beadás</small></td><td>26 587 Ft</td><td>legalább 2 héttel előtte; 2–3 évig véd</td></tr>
+            <tr><th scope="row">Japán agyvelőgyulladás<br><small>JE, szúnyogcsípéssel terjed</small></th><td>Javasolt: közel egy hónapos nyári út, részben vidéki szakasszal. A CDC egy hónapnál hosszabb tartózkodásnál ajánlja.</td><td>2 adag · 2 alkalom, 28 nap eltéréssel</td><td>51 172 Ft / adag<br><small>becslés, nincs a listán</small></td><td>102 344 Ft</td><td>1. adag áprilisban; a 2. legkésőbb 1 héttel az út előtt</td></tr>
+            <tr class="cost-total"><th scope="row">Alap csomag összesen</th><td></td><td>2 alkalom</td><td></td><td>155 110 Ft</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="vax-subtitle">Csak ha az oltási könyvben nincs meg</h3>
+      <div class="budget-scroll">
+        <table class="cost-table vax-table">
+          <thead><tr><th scope="col">Oltás</th><th scope="col">Mikor kell</th><th scope="col">Adag · alkalom</th><th scope="col">Ár / adag</th><th scope="col">Fejenként</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Td emlékeztető<br><small>Adacel</small></th><td>Ha az utolsó tetanusz–diftéria oltás 10 évnél régebbi.</td><td>1 adag · 1 alkalom</td><td>13 734 Ft<br><small>7 562 + 6 172</small></td><td>13 734 Ft</td></tr>
+            <tr><th scope="row">Hepatitis B<br><small>Engerix B felnőtt</small></th><td>Ha nincs meg a védettség. Gyorsított séma: 0., 7. és 21. nap.</td><td>3 adag · 3 alkalom</td><td>17 844 Ft<br><small>11 672 + 6 172</small></td><td>53 532 Ft</td></tr>
+            <tr><th scope="row">MMR<br><small>M-M-RvaxPro</small></th><td>Ha nincs két dokumentált oltás (kanyaró, mumpsz, rubeola).</td><td>2 adag · 2 alkalom, 4 hét eltéréssel</td><td>22 679 Ft<br><small>16 507 + 6 172</small></td><td>45 358 Ft</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="vax-note">Ha mindhárom feltételes oltás kell, fejenként még 112 624 Ft jön, 5 főre 563 120 Ft, 6 főre 675 744 Ft.</p>
+
+      <h3 class="vax-subtitle">Nem kell, vagy nem ajánlott</h3>
+      <div class="vax-grid">
+        <div class="source-card">
+          <p><strong>Sárgaláz:</strong> nem kötelező, mert nem sárgalázas országból érkeztek. Ha a jegyeken 12 óránál hosszabb átszállás van sárgalázas országban, ezt újra ellenőrizni kell.</p>
+          <p><strong>Dengue:</strong> nincs ajánlott védőoltás. Több ország, köztük Németország és a WHO a korábbi fertőzéshez köti. A védekezés a csípés elkerülése. Hongkongban és Szingapúrban a hatóságok is figyelmeztetnek rá.</p>
+        </div>
+        <div class="source-card">
+          <p><strong>Veszettség:</strong> nem alap csomag, csak akkor, ha kutyákkal vagy más állatokkal lesz közvetlen kapcsolat. Adagonként 28 374 Ft, 3 adag: 85 122 Ft/fő.</p>
+          <p><strong>Malária, kullancs-agyvelőgyulladás (TBE), meningitis:</strong> az útvonalon nem indokolt. A malária-kockázat a városokban nincs, a TBE-területek nincsenek az útvonalon.</p>
+        </div>
+      </div>
+
+      <div class="vax-grid">
+        <div class="source-card">
+          <h3 class="vax-subtitle" style="margin-top:0">Szúnyog és has elleni védekezés</h3>
+          <ul class="vax-list">
+            <li>Szúnyogriasztó DEET (20–30%) vagy picaridin, naponta újra, a permetrin a ruhára való.</li>
+            <li>Alkonyattól hosszú ujjú ruha, zárt cipő, légkondicionált szoba vagy ablakháló.</li>
+            <li>Csak palackozott vagy forralt víz, a jégkocka és a nyers zöldség óvatosan. Gyakori kézmosás.</li>
+            <li>Rehidráló só az útra. Hasmenésnél bőven folyadék, és orvosi segítség, ha nem múlik el.</li>
+          </ul>
+        </div>
+        <div class="source-card">
+          <h3 class="vax-subtitle" style="margin-top:0">Időterv</h3>
+          <ul class="vax-list">
+            <li><strong>Március–április eleje:</strong> szakmai tanácsadás, hepatitis A, hastífusz, JE 1. adag, és a feltételes oltások első adagja, ha kell.</li>
+            <li><strong>Április vége–május eleje:</strong> JE 2. adag (28 nap után).</li>
+            <li><strong>Május:</strong> MMR 2. adag (4 hét után), és a hepatitis B 3. adag, ha kell.</li>
+            <li><strong>Június 14. előtt legalább 1 héttel:</strong> minden kész. Az oltási könyv másolata 2 000 Ft.</li>
+          </ul>
+        </div>
+      </div>
+
+      <details class="source-card budget-detail">
+        <summary>Árak, források és elérhetőség</summary>
+        <p>Az árak a BFKH Nemzetközi Oltóhely 2026. februári árlistájából származnak, az oltóanyagok ára 5% áfát tartalmaz. A japán agyvelőgyulladás-oltásra nincs hivatalos ár a listán, ezért az 51 172 Ft / adag becslés, árajánlatot kérj.</p>
+        <p>BFKH Nemzetközi Oltóhely (Budapest): +36 (1) 465-3809 · oltohely@nfo.bfkh.gov.hu (az árlistán szereplő elérhetőség).</p>
+        <ul class="budget-source-list">
+          <li><a href="https://kormanyhivatalok.hu/sites/default/files/2026-02/oltohelyi-arlista_2026.-februar.docx" target="_blank" rel="noreferrer">BFKH Nemzetközi Oltóhely · 2026. februári árlista ↗</a></li>
+          <li><a href="https://wwwnc.cdc.gov/travel/destinations/traveler/none/china" target="_blank" rel="noreferrer">CDC · Kína utazási oldal ↗</a></li>
+        </ul>
+        <p>Ez nem orvosi tanács. A végleges oltási tervet háziorvos vagy utazás-egészségügyi szakember állítja össze az oltási könyv alapján.</p>
+      </details>
     </section>
 
     <section class="section" id="felkeszules">
