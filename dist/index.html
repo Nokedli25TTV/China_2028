@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b4a42">
-  <meta name="description" content="34 napos útiterv 2028. június 14. és július 17. között, Hongkongtól Kína történelmi és modern városain át Szingapúrig, három utazóra.">
+  <meta name="description" content="34 napos útiterv 2028. június 14. és július 17. között, Hongkongtól Szingapúrig, választható 5 vagy 6 fős költségbecsléssel.">
   <meta name="color-scheme" content="light">
   <title>Kína és Szingapúr 2028 – június 14. – július 17.</title>
   <link rel="manifest" href="./manifest.webmanifest">
@@ -720,6 +720,47 @@
     .cost-table td:last-child, .cost-table th:last-child { text-align:left; font-weight:600; }
     .cost-table tr:last-child td { border-bottom:0; }
     .budget-note { margin:18px 2px 0; color:var(--muted); font-size:.9rem; }
+    .budget-controls { display:flex; gap:24px; align-items:center; padding:22px; margin-bottom:22px; border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--white); }
+    .budget-controls label { display:flex; flex-direction:column; gap:8px; flex:0 0 190px; font-weight:800; color:var(--jade); }
+    .budget-controls select { min-height:50px; padding:10px 14px; border:2px solid var(--jade); border-radius:12px; color:var(--ink); background:var(--paper-soft); font-weight:800; }
+    .budget-controls p { margin:0; color:var(--muted); font-size:.9rem; }
+    .party-comparison { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:0 0 24px; }
+    .party-comparison-card { padding:22px; display:grid; gap:7px; border:1px solid var(--line); border-radius:var(--radius-lg); background:var(--white); }
+    .party-comparison-card.selected { border:2px solid var(--jade); background:var(--jade-soft); }
+    .party-comparison-card p { margin:0; font-weight:850; color:var(--jade); }
+    .party-comparison-card strong { font:700 clamp(1.7rem,3vw,2.4rem)/1.15 Georgia,serif; }
+    .party-comparison-card span { font-weight:750; }
+    .party-comparison-card small { color:var(--muted); }
+    .budget-cost-table td:not(:first-child), .budget-cost-table th:not(:first-child) { white-space:nowrap; text-align:right; }
+    .cost-line-detail summary { cursor:pointer; font-weight:750; }
+    .cost-line-detail p { margin:10px 0 0; max-width:520px; color:var(--muted); font-size:.83rem; font-weight:400; }
+    .cost-table .cost-total { background:var(--jade-soft); }
+    .cost-table .cost-total th, .cost-table .cost-total td { font-weight:900; }
+    .cost-table .final { color:var(--jade-deep); background:#e9d5a6; }
+    .budget-detail-grid { display:grid; gap:16px; margin-top:26px; }
+    .budget-detail p { color:var(--muted); font-size:.88rem; }
+    .budget-detail .cost-table { margin:18px 0; }
+    .cost-table caption { padding:12px 18px; text-align:left; font-weight:850; color:var(--jade); }
+    .budget-detail .cost-table th { font-size:.85rem; text-transform:none; letter-spacing:normal; font-weight:650; background:none; color:var(--ink); }
+    .budget-detail .cost-table small { color:var(--muted); font-weight:400; }
+    .budget-scroll { overflow-x:auto; }
+    .hotel-cost-table { min-width:670px; }
+    .budget-source-list { padding-left:20px; }
+    .budget-source-list li { padding:8px 0; }
+    .budget-source-list a { font-weight:750; color:var(--jade); }
+    .budget-source-list p { margin:5px 0 0; }
+    @media (max-width:600px) {
+      .budget-controls { flex-direction:column; align-items:stretch; gap:14px; }
+      .budget-controls label { flex-basis:auto; }
+      .party-comparison { grid-template-columns:1fr; }
+      .budget-cost-table thead { display:none; }
+      .budget-cost-table tr { display:grid; grid-template-columns:1fr 1fr; padding:16px; border-bottom:1px solid var(--line); gap:12px; }
+      .budget-cost-table td, .budget-cost-table th { border:0; padding:0; }
+      .budget-cost-table td:first-child, .budget-cost-table th:first-child { grid-column:1/-1; }
+      .budget-cost-table td[data-label] { display:grid; gap:3px; text-align:left; font-size:.95rem; }
+      .budget-cost-table td[data-label]::before { content:attr(data-label); color:var(--muted); font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; font-weight:700; }
+      .budget-detail .cost-table td, .budget-detail .cost-table th { padding:12px 10px; }
+    }
 
     .check-overview { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin-bottom:18px; }
     .check-summary { min-height:116px; padding:20px; border:1px solid var(--line); border-radius:var(--radius-lg); display:grid; align-content:space-between; gap:12px; color:var(--ink); background:var(--white); box-shadow:var(--shadow-soft); cursor:pointer; text-align:left; }
@@ -977,10 +1018,10 @@
       <div>
         <p class="eyebrow">Útiterv · városokkal és tervezett dátumokkal</p>
         <h1>Kína<br><span>és Szingapúr</span></h1>
-        <p class="hero-lead">Császári udvarok, vízesés fölötti óváros, kantoni utcák és futurisztikus horizontok — három utazóra, 34 napra, rugalmas napi sorrenddel.</p>
+        <p class="hero-lead">Császári udvarok, vízesés fölötti óváros, kantoni utcák és futurisztikus horizontok — várhatóan 5–6 utazóra, 34 napra, rugalmas napi sorrenddel.</p>
         <ul class="hero-meta" aria-label="Utazási adatok">
           <li>2028. június 14. – július 17.</li>
-          <li>3 utazó</li>
+          <li>5–6 utazó · még változhat</li>
           <li>34 nap · 31 szálláséj</li>
           <li>12 állomás</li>
         </ul>
@@ -1030,7 +1071,7 @@
         </article>
         <aside class="stat-panel" aria-label="Útiterv számai">
           <div class="stat"><span>Teljes út</span><b>34 nap</b></div>
-          <div class="stat"><span>Utazók</span><b>3 fő</b></div>
+          <div class="stat"><span>Utazók</span><b>5–6 fő</b></div>
           <div class="stat"><span>Megállók</span><b>12 állomás</b></div>
         </aside>
       </div>
@@ -1079,42 +1120,64 @@
 
     <section class="section" id="koltseg">
       <div class="section-header">
-        <div><p class="eyebrow">Az új útvonal költségei</p><h2>A keretet ehhez az úthoz árazzuk.</h2></div>
-        <p>A korábbi 35 napos, sivatagi kitérős becslés más útvonalra készült. Az új tervhez Hongkongot, Makaót és Szingapúrt, valamint az új repülő- és vasúti szakaszokat is külön kell árazni.</p>
+        <div><p class="eyebrow">34 nap · 31 éjszaka · 5 vagy 6 fő</p><h2>Mennyibe kerülne az egész út?</h2></div>
+        <p>2026. októberi árszintekből számolt tervezési keret, a teljes útvonalra. A 2028-as jegyek még nem foglalhatók végig; az összegek becslések, a változásokra külön 15% tartalékot teszünk félre.</p>
+      </div>
+      <div class="budget-controls">
+        <label for="budget-party">Hányan utaztok?<select id="budget-party"><option value="5" selected>5 fő</option><option value="6">6 fő</option></select></label>
+        <p>Mindkét esetben 3 szobával számolunk. A repülő, vonat, belépő és étkezés személyenként nő; a szállás és a közös fuvarok megoszlanak.</p>
       </div>
       <div class="budget-intro">
         <article class="budget-hero">
-          <div><p class="eyebrow">34 nap · 3 utazó</p><h3>Az új összeg még nyitott</h3></div>
-          <div class="budget-big"><b>Újraárazandó</b><span>Az alábbi mennyiségek már az új tervből származnak.</span></div>
+          <div><p class="eyebrow">Ajánlott keret · fejenként</p><h3>A teljes út, tartalékkal</h3></div>
+          <div class="budget-big"><b id="budget-person-total"></b><span id="budget-person-base"></span></div>
         </article>
         <div class="budget-summary">
-          <article class="budget-card"><small>Szállás</small><strong>31 éjszaka</strong><p>12 állomáson, három főre alkalmas szobával.</p></article>
-          <article class="budget-card"><small>Biztosítás</small><strong>34 nap</strong><p>Június 14. – július 17., az utazási napokkal együtt.</p></article>
-          <article class="budget-card"><small>Utazási éjszakák</small><strong>2 éjszaka</strong><p>Június 14. és július 16.; a járatokkal pontosítandó.</p></article>
-          <article class="budget-card"><small>Külön költségblokk</small><strong>Szingapúr</strong><p>3 szálláséj, helyi programok és a Chongqingból induló repülés.</p></article>
+          <article class="budget-card"><small id="budget-selected-party"></small><strong id="budget-group-total"></strong><p>Az alapbecslés és a 15% tartalék együtt.</p></article>
+          <article class="budget-card"><small>Alapbecslés · csapat</small><strong id="budget-group-base"></strong><p>Minden felsorolt költség; a tartalék még nincs benne.</p></article>
+          <article class="budget-card"><small>2028-as tartalék · csapat</small><strong id="budget-group-reserve"></strong><p>15% az ár-, árfolyam- és foglalási eltérésekre. Nem árgarancia.</p></article>
+          <article class="budget-card"><small>Szobabeosztás · 31 éj</small><strong id="budget-room-layout"></strong><p>3 szoba saját fürdővel. Az egyágyas foglalást is teljes kétágyas szobaárra tartalékoljuk.</p></article>
         </div>
       </div>
+      <p class="sr-only" id="budget-status" role="status" aria-live="polite"></p>
+      <div class="party-comparison" id="budget-comparison" aria-label="5 és 6 fős utazás összehasonlítása"></div>
       <div class="cost-table-wrap">
-        <table class="cost-table">
-          <caption class="sr-only">Az új, 34 napos utazás költségszámításának alapjai</caption>
-          <thead><tr><th scope="col">Kategória</th><th scope="col">Újraárazás alapja</th></tr></thead>
-          <tbody>
-            <tr><td>Nemzetközi repülőjegyek</td><td>Budapest → Hongkong; Chongqing → Szingapúr; Szingapúr → Budapest</td></tr>
-            <tr><td>Szállás</td><td>31 éj · 3 fő · 12 állomás</td></tr>
-            <tr><td>Étkezés</td><td>34 nap; az utazási napok és a célterületek szerint bontva</td></tr>
-            <tr><td>Kínán belüli repülők</td><td>Shenzhen → Sanghaj; Peking → Chengdu</td></tr>
-            <tr><td>Vasúti utazás</td><td>7 tervezett városközi szakasz; Furong kapcsolatai külön ellenőrizendők</td></tr>
-            <tr><td>Hongkong–Makaó–Zhuhai</td><td>Busz vagy komp, határátlépések és helyi transzferek</td></tr>
-            <tr><td>Városon belüli közlekedés</td><td>Metró, busz, taxi és reptéri / pályaudvari transzferek</td></tr>
-            <tr><td>Utasbiztosítás</td><td>34 nap; Kína, Hongkong, Makaó, Szingapúr és átszállások</td></tr>
-            <tr><td>Internet / eSIM</td><td>3 telefon; az összes célterület lefedettségével</td></tr>
-            <tr><td>Belépők és programok</td><td>A kiválasztott főprogramok; a választható kilátók és előadások külön</td></tr>
-            <tr><td>Snack, ital és ajándék</td><td>Külön személyes keret mindhárom utazónak</td></tr>
-            <tr><td>Belépés / adminisztráció</td><td>A 2028-ban érvényes szabályok és szükséges díjak alapján</td></tr>
-          </tbody>
+        <table class="cost-table budget-cost-table">
+          <caption class="sr-only">Teljes költségbecslés fejenként és a kiválasztott létszámra</caption>
+          <thead><tr><th scope="col">Kategória · koppints a részletekért</th><th scope="col">Fejenként</th><th scope="col">Teljes csapat</th></tr></thead>
+          <tbody id="budget-rows"></tbody>
         </table>
       </div>
-      <p class="budget-note">Minden összeg tervezési becslés lesz a tényleges ajánlatok megjelenéséig. A végösszeghez először a repülőjegyeket és a 31 szálláséjszakát érdemes kiválasztani.</p>
+      <p class="budget-note">Ezer forintra kerekített összegek; az összesítés kerekítés előtt történik. A célszámok saját becslések, a források az árszintek ellenőrzését segítik. Felnőtt jegyekkel és csoportkedvezmény nélkül számolunk.</p>
+
+      <div class="budget-detail-grid">
+        <details class="source-card budget-detail">
+          <summary>Szállás városonként · 31 éjszaka, 3 szoba</summary>
+          <p>A szobaár egy kétágyas szoba teljes, adókkal együtt célzott éjszakai kerete. Középkategóriás, jó közlekedésű szállást feltételezünk. Hongkongban és Szingapúrban kisebb szoba is előfordulhat.</p>
+          <div class="budget-scroll"><table class="cost-table hotel-cost-table"><thead><tr><th scope="col">Állomás</th><th scope="col">Éj</th><th scope="col">Szoba / éj</th><th scope="col">Csapat</th><th scope="col">Fejenként</th></tr></thead><tbody id="hotel-rows"></tbody></table></div>
+          <p>5 főnél a 2+3 ágyas elrendezés olcsóbb is lehet, ha ténylegesen elérhető és mindenkinek megfelel. Ezt a megtakarítást előre nem vettük biztosra.</p>
+        </details>
+        <details class="source-card budget-detail">
+          <summary>Repülők és vonatok · szakaszonként</summary>
+          <p>A két hosszú távú repülést együtt érdemes többvárosos jegyként is árazni. A célár poggyászkeretet is tartalmaz; nem a keresők legolcsóbb, csomag nélküli indulóára.</p>
+          <table class="cost-table"><caption>Repülőjegyek célára</caption><tbody id="flight-cost-rows"></tbody></table>
+          <table class="cost-table"><caption>Vasúti célárak · másodosztály</caption><tbody id="rail-cost-rows"></tbody></table>
+          <p>Furong felé és onnan tovább jelenleg átszállással is számolni kell. A helyi állomási fuvarok a közös transzfereknél vannak. A Maglev külön választható élmény; a helyi közlekedési keretből férhet bele.</p>
+        </details>
+        <details class="source-card budget-detail">
+          <summary>Étkezés és belépők · területenként</summary>
+          <p>Az étkezés egyszerű reggelit, helyi ebédet és vacsorát feltételez, időnként jobb étteremmel. Az extra snack, kávé és alkohol külön keretből megy.</p>
+          <table class="cost-table"><caption>Étkezés · összesen 34 nap</caption><tbody id="food-cost-rows"></tbody></table>
+          <table class="cost-table"><caption>Belépők és programok célára városonként</caption><tbody id="attraction-cost-rows"></tbody></table>
+          <p>A helyszíni shuttle, felvonó és kilátó a fenti programkeretben van; a városból odajutás másik sor. Leshan, Disneyland, Universal Studios, privát idegenvezető és prémium élményprogram nincs az alapcsomagban.</p>
+        </details>
+        <details class="source-card budget-detail">
+          <summary>Árfolyamok, feltételezések és ellenőrzött források</summary>
+          <p>Tájékozódás: 2026. október 23. Tervezési árfolyam: 1 CNY = 50 Ft, 1 HKD = 45 Ft, 1 MOP = 44 Ft, 1 SGD = 270 Ft, 1 USD = 340 Ft. Ezek kerekített számolási árfolyamok, nem aktuális banki váltási ajánlatok. A teljes alapbecslésre külön 15% tartalék kerül.</p>
+          <p>A biztosítás és a vízum / adminisztráció külön félretett keret, nem személyre szóló ajánlat vagy 2028-as jogszabály. A belépési kedvezményeket nem feltételezzük automatikusan. Visszatéríthető kaució, útlevélcsere, nagyobb vásárlás, luxusszállás és útlemondási biztosítás nincs benne; a magyarországi reptéri keret budapesti indulási pontot feltételez.</p>
+          <ul class="budget-source-list" id="budget-sources"></ul>
+        </details>
+      </div>
     </section>
 
     <section class="section" id="felkeszules">
@@ -1153,7 +1216,7 @@
     <div class="closing-inner">
       <p class="eyebrow">Frissített útvonal · 2026. október 23.</p>
       <h2>Az út még változik.<br>A jó irány már megvan.</h2>
-      <p>A tervezett út 2028. június 14-től július 17-ig tart. A következő lépés a városonkénti szálláskörzetek, a pontos járatok, a Furonghoz vezető vasúti kapcsolat és az új költségkeret véglegesítése.</p>
+      <p>A tervezett út 2028. június 14-től július 17-ig tart, várhatóan 5–6 fővel. A következő lépés a végleges létszám, a városonkénti szálláskörzetek, a pontos járatok és a Furonghoz vezető vasúti kapcsolat kiválasztása.</p>
     </div>
   </footer>
 
@@ -1180,6 +1243,8 @@
 
   <script src="./trip-data.js"></script>
   <script src="./spot-descriptions.js"></script>
+  <script src="./budget-data.js"></script>
+  <script src="./budget.js"></script>
   <script>
     const cities = window.chinaTrip.cities;
     const routeCities = cities.filter(city => !city.transit);
@@ -1476,22 +1541,22 @@
       {id:'visa-hongkong',category:'visa',title:'Hongkong külön belépési feltételei',detail:'A szárazföldi résztől eltérő szabályokat is külön ellenőrizzük.',hint:'Indulás előtt 3–6 hónappal',initialStatus:'check'},
       {id:'visa-macao',category:'visa',title:'Makaó külön belépési feltételei',detail:'Hongkongból Makaóba utazunk június 18-án, majd június 19-én belépünk a szárazföldi Kínába.',hint:'Indulás előtt 3–6 hónappal',initialStatus:'check'},
       {id:'visa-singapore',category:'visa',title:'Szingapúri belépés és érkezési adatlap',detail:'A július 13–16-i tartózkodásra vonatkozó belépési feltételek és az aktuális érkezési nyilatkozat.',hint:'2028 tavaszán, majd indulás előtt',initialStatus:'check'},
-      {id:'passport-validity',category:'visa',title:'Mindhárom útlevél érvényessége',detail:'Lejárat, üres oldalak és az utazáshoz szükséges tartalék érvényesség.',hint:'Foglalás előtt',initialStatus:'estimate'},
+      {id:'passport-validity',category:'visa',title:'Minden utazó útlevelének érvényessége',detail:'Lejárat, üres oldalak és az utazáshoz szükséges tartalék érvényesség, a végleges 5–6 fős létszám szerint.',hint:'Foglalás előtt',initialStatus:'estimate'},
       {id:'flight-international',category:'tickets',title:'Nemzetközi repülőjegyek',detail:'Budapest–Hongkong június 14–15., Chongqing–Szingapúr július 13., Szingapúr–Budapest július 16–17.; poggyásszal és az átszállásokkal együtt.',hint:'Menetrendnyitástól',initialStatus:'estimate'},
       {id:'flight-domestic',category:'tickets',title:'Belföldi repülőjegyek',detail:'A hosszabb városközi szakaszok járatai és poggyászfeltételei.',hint:'Menetrendnyitás után',initialStatus:'estimate'},
-      {id:'rail-tickets',category:'tickets',title:'Gyorsvasúti jegyek',detail:'Az összes vasúti szakasz, útlevéladatok, jegynyitás és három közeli ülőhely ellenőrzése.',hint:'Jegynyitáskor',initialStatus:'estimate'},
+      {id:'rail-tickets',category:'tickets',title:'Gyorsvasúti jegyek',detail:'Az összes vasúti szakasz, útlevéladatok, jegynyitás és 5–6 közeli ülőhely ellenőrzése.',hint:'Jegynyitáskor',initialStatus:'estimate'},
       {id:'attraction-tickets',category:'tickets',title:'Előre foglalandó látnivalók',detail:'Tiltott Város, Terrakotta Hadsereg, Panda Base, Furong és a kiválasztott szingapúri programok.',hint:'Városonként külön',initialStatus:'check'},
-      {id:'hotel-bookings',category:'tickets',title:'31 szálláséjszaka, 12 állomás',detail:'Három főre alkalmas szobák; külön ellenőrizendő a június 14-i és július 16-i utazási éjszaka a repülőjegyek alapján.',hint:'Járatok kiválasztása után',initialStatus:'estimate'},
+      {id:'hotel-bookings',category:'tickets',title:'31 szálláséjszaka, 12 állomás',detail:'5–6 főre tervezett 3 szoba; külön ellenőrizendő a június 14-i és július 16-i utazási éjszaka a repülőjegyek alapján.',hint:'Járatok kiválasztása után',initialStatus:'estimate'},
       {id:'weekly-closures',category:'hours',title:'Heti zárónapok',detail:'A napi sorrendet összevetjük a múzeumok és látnivalók pihenőnapjaival.',hint:'2028-as dátumok után',initialStatus:'check'},
       {id:'timed-entry',category:'hours',title:'Időkapuk és napi limitek',detail:'Megnézzük, hol kell előre választani belépési idősávot.',hint:'Foglalási szabályok megjelenésekor',initialStatus:'check'},
       {id:'seasonal-hours',category:'hours',title:'Nyári nyitvatartás',detail:'Esti programok, hőség miatti módosítások és szezonális lezárások.',hint:'Indulás előtt 1 hónappal',initialStatus:'estimate'},
       {id:'insurance-duration',category:'insurance',title:'34 teljes nap biztosítása',detail:'2028. június 14. – július 17., a ki- és hazautazási nappal együtt; a szerződés utazási időkorlátját is ellenőrizzük.',hint:'Kötés előtt',initialStatus:'check'},
       {id:'insurance-regions',category:'insurance',title:'Kína, Hongkong, Makaó és Szingapúr fedezete',detail:'Minden célterület és az összes átszállás szerepeljen a területi fedezetben.',hint:'Kötés előtt',initialStatus:'check'},
       {id:'insurance-extras',category:'insurance',title:'Orvosi, késési és poggyászfedezet',detail:'A magasabb értékű elektronika és az aktív kirándulások feltételei.',hint:'Ajánlatok összevetésekor',initialStatus:'estimate'},
-      {id:'internet-esim',category:'internet',title:'eSIM vagy roaming mindhárom telefonra',detail:'Kína, Hongkong, Makaó és Szingapúr lefedettsége, kompatibilitás, adatkeret és hotspot.',hint:'Indulás előtt 1–2 hónappal',initialStatus:'estimate'},
+      {id:'internet-esim',category:'internet',title:'eSIM vagy roaming minden utazónak',detail:'Kína, Hongkong, Makaó és Szingapúr lefedettsége, legalább 34 napra elegendő érvényesség, adatkeret és kompatibilitás.',hint:'Indulás előtt 1–2 hónappal',initialStatus:'estimate'},
       {id:'internet-services',category:'internet',title:'Szükséges szolgáltatások próbája',detail:'Térkép, fordító, fizetés és üzenetküldés működésének itthoni tesztje.',hint:'Indulás előtt 2 héttel',initialStatus:'check'},
       {id:'offline-pack',category:'internet',title:'Offline jegyek és címek letöltése',detail:'Szálláscímek, útlevelek másolatai, foglalások és fontos elérhetőségek.',hint:'Indulás előtti héten',initialStatus:'estimate'},
-      {id:'rail-account',category:'transport',title:'12306-regisztráció és útlevéladatok',detail:'Mindhárom utazó adatainak és azonosításának előkészítése.',hint:'Jegyvásárlás előtt',initialStatus:'estimate'},
+      {id:'rail-account',category:'transport',title:'12306-regisztráció és útlevéladatok',detail:'Minden utazó adatainak és azonosításának előkészítése, a végleges létszám alapján.',hint:'Jegyvásárlás előtt',initialStatus:'estimate'},
       {id:'transport-schedules',category:'transport',title:'Vonat- és belföldi járatok menetrendje',detail:'A városok közötti napok tényleges indulási és érkezési ideje.',hint:'Menetrendnyitáskor',initialStatus:'check'},
       {id:'border-crossing',category:'transport',title:'Hongkong–Makaó–Zhuhai átkelések',detail:'Június 18-án busz vagy komp Makaóba; június 19-én határátlépés és továbbutazás Guangzhouba.',hint:'Indulás előtt 1 hónappal',initialStatus:'check'},
       {id:'furong-rail',category:'transport',title:'Chengdu–Furongzhen–Chongqing kapcsolat',detail:'Július 7–8.: a pontos vonatok, átszállások, érkezési állomások és az óvárosi transzfer megtervezése.',hint:'Menetrend megjelenésekor',initialStatus:'check'},

@@ -2,7 +2,8 @@
 window.chinaTrip = {
   start: '2028-06-14',
   end: '2028-07-17',
-  travelers: 3,
+  travelers: 5,
+  possibleTravelers: [5,6],
   hotelNights: 31,
   cities: [
     {id:'kiutazas',name:'Kiutazás Budapestről',transit:true,nights:0,period:'június 14.',blurb:'Indulás a Budapest Liszt Ferenc Nemzetközi Repülőtérről.',days:[

@@ -1,9 +1,11 @@
-const CACHE = 'china-2028-v5';
+const CACHE = 'china-2028-v6';
 const ASSETS = [
   './',
   './index.html',
   './spot-descriptions.js',
   './trip-data.js',
+  './budget-data.js',
+  './budget.js',
   './manifest.webmanifest',
   './assets/app-icon.svg',
   './assets/china-journey-hero.webp'
