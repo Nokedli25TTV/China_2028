@@ -2,7 +2,7 @@
 window.chinaBudget = {
   researchedAt: '2026-10-23',
   contingencyRate: 0.15,
-  fx: {HUF:1,CNY:50,HKD:45,MOP:44,SGD:270,USD:340},
+  fx: {HUF:1,CNY:49,HKD:42,MOP:41,SGD:255,USD:326},
   hotels: [
     {city:'Hongkong',nights:3,currency:'HKD',roomRate:1000},
     {city:'Makaó',nights:1,currency:'MOP',roomRate:850},
@@ -18,11 +18,11 @@ window.chinaBudget = {
     {city:'Szingapúr',nights:3,currency:'SGD',roomRate:220}
   ],
   flights: [
-    {route:'Budapest → Hongkong',date:'június 14–15.',amount:200000,type:'longhaul'},
-    {route:'Szingapúr → Budapest',date:'július 16–17.',amount:200000,type:'longhaul'},
-    {route:'Chongqing → Szingapúr',date:'július 13.',amount:85000,type:'regional'},
+    {route:'Budapest → Hongkong',date:'június 14–15.',amount:130000,type:'longhaul'},
+    {route:'Szingapúr → Budapest',date:'július 16–17.',amount:140000,type:'longhaul'},
+    {route:'Chongqing → Szingapúr',date:'július 13.',amount:65000,type:'regional'},
     {route:'Shenzhen → Sanghaj',date:'június 23.',amount:50000,type:'domestic'},
-    {route:'Peking → Chengdu',date:'július 4.',amount:50000,type:'domestic'}
+    {route:'Peking → Chengdu',date:'július 4.',amount:70000,type:'domestic'}
   ],
   rail: [
     {route:'Zhuhai → Guangzhou',cny:80},
@@ -76,15 +76,18 @@ window.chinaBudget = {
     {id:'fees',label:'Foglalási, banki és ATM-díjak',kind:'person',amount:12000,detail:'Kisebb fizetési és közvetítői díjak kerete. A tervezési árfolyam külön szerepel, a visszatéríthető kaució nem végleges költség.'}
   ],
   sources: [
-    {title:'MNB · hivatalos árfolyamok',url:'https://www.mnb.hu/en/arfolyamok',note:'2026. október 22.: CNY 48,89; HKD 41,60; SGD 255,47; USD 326,23 Ft. A kalkulátor kerekített tervezési árfolyamokat használ.'},
-    {title:'Lufthansa · Budapest–Hongkong',url:'https://www.lufthansa.com/lhg/hu/hu/o-d/cy-cy/budapest-hongkong',note:'Összehasonlítási alap: közzétett 2027. júniusi / júliusi retúr árszintek. Nem a saját, két külön várost összekötő 2028-as jegyünk ára.'},
-    {title:'SWISS · Budapest–Szingapúr',url:'https://www.swiss.com/lhg/sg/en/o-d/cy-cy/budapest-singapore',note:'Jelenlegi retúr árszintek a hosszú távú keret ellenőrzéséhez; nem egyirányú vagy 2028-as ajánlat.'},
-    {title:'Trip.com · Chongqing–Szingapúr',url:'https://www.trip.com/flights/airport-ckg-sin/',note:'Aktuális egyirányú kínálat; poggyász és szolgáltatások szerint változik.'},
-    {title:'Trip.com · Shenzhen–Sanghaj',url:'https://www.trip.com/flights/airport-szx-pvg/',note:'Aktuális belföldi árak; a napi akciós minimum helyett magasabb tervezési kerettel számolunk.'},
+    {title:'MNB · hivatalos árfolyamok',url:'https://www.mnb.hu/en/arfolyamok',note:'2026. október 22.: CNY 48,89; HKD 41,60; SGD 255,47; USD 326,23 Ft. A kalkulátor ezekhez kerekített értékeket használ (CNY 49, HKD 42, SGD 255, USD 326). A MOP a dollárhoz kötött árfolyamból, kb. 41 Ft.'},
+    {title:'Liligo · Budapest–Hongkong',url:'https://www.liligo.hu/jaratok/utvonalak/budapest/hongkong',note:'Oda-vissza ár 197 863 Ft-tól, az elmúlt három hónap megfigyelése szerint; októberben általában a legolcsóbb. Egyirányra kb. 100 ezer Ft, a nyári indulásra ehhez felárat számoltunk.'},
+    {title:'Austrian · Budapest–Hongkong',url:'https://www.austrian.com/lhg/hu/hu/o-d/cy-cy/budapest-hongkong',note:'Oda-vissza kezdőár 230 900 Ft a keresési oldalon. Nem a mi dátumainkra szóló ajánlat.'},
+    {title:'Skyscanner · Budapest–Szingapúr',url:'https://www.skyscanner.com/routes/bud/sins/budapest-to-singapore.html',note:'Havi egyirányú táblázat (Budapest → Szingapúr): júniusban kb. 326 USD, júliusban kb. 421 USD. A júliusi visszaútra a júliusi értéket vettük alapul (kb. 140 ezer Ft).'},
+    {title:'Singapore Airlines · Chongqing–Szingapúr',url:'https://www.singaporeair.com/en-sg/flights-from-chong-qing-to-singapore-sg',note:'Oda-vissza economy ár 2 062–2 601 CNY 2026-os nyári–őszi időszakra, adókkal. Egyirányra kb. 65 ezer Ft-ot számoltunk.'},
+    {title:'Ratepunk · Shenzhen–Sanghaj',url:'https://www.ratepunk.com/flights-from-to/SZX/SHA/cheap-flights-from-shenzhen-to-shanghai',note:'Mediánár kb. 140 USD; az Expedia 275 USD-tól kínálja. Az 50 ezer Ft-os keret a medián fölött van, poggyásszal.'},
     {title:'Trip.com · Hongkongi szállások',url:'https://www.trip.com/hotels/hong-kong-hotels-list-58/',note:'Árszintellenőrzés; a kalkulátor városi szobakerete nem konkrét foglalás.'},
     {title:'Trip.com · Sanghaji háromcsillagos szállások',url:'https://us.trip.com/hotels/star3/city/cn/shanghai.html',note:'Középkategóriás árszintek és közzétett átlagok.'},
     {title:'Trip.com · Szingapúri háromcsillagos szállások',url:'https://us.trip.com/hotels/star3/city/sg/singapore.html',note:'A drágább szingapúri blokk szobakeretének ellenőrzéséhez.'},
     {title:'China Railway · 12306',url:'https://www.12306.cn/en/index.html',note:'A konkrét dátumok és vonatok hivatalos, későbbi ellenőrzési pontja; a mostani táblázat célárakat tartalmaz.'},
+    {title:'ChinaVigators · Peking–Xi’an vonat',url:'https://www.chinavigators.com/beijing-to-xian-train/',note:'Másodosztályú nagysebességű jegy a forrásokban kb. 515–600 CNY. A 580 CNY-os tervezési ár ebbe a sávba esik; a végső árat a 12306-on kell ellenőrizni.'},
+    {title:'Peak Tram · 2026-os díjak',url:'https://thepeak.com.hk/sites/peak/files/2025-12/%5BPress%20Release%5D%20The%20Peak%20Tram%20Announces%20Fare%20Adjustment.pdf',note:'Felnőtt oda-vissza 116 HKD a 2025. december 29-től érvényes díjak szerint. A hongkongi belépőkeretben ezzel számoltunk.'},
     {title:'Ngong Ping 360 · hivatalos árlista',url:'https://www.np360.com.hk/media/s3wo0t3n/immediate-release-ngong-ping-360-announces-new-ticket-prices.pdf',note:'Normál kabinos felnőtt retúr 295 HKD a közzétett árlistán.'},
     {title:'Tiltott Város · hivatalos látogatói oldal',url:'https://intl.dpm.org.cn/visit.html',note:'Nyári felnőtt alapbelépő jelenleg 60 CNY; a külön galériák felárasak.'},
     {title:'Gardens by the Bay · hivatalos belépők',url:'https://www.gardensbythebay.com.sg/en/things-to-do/attractions/flower-dome.html',note:'Nem helyi felnőttek Flower Dome + Cloud Forest csomagja jelenleg 46 SGD. A 2028-as kiállítás és ár változhat.'},
